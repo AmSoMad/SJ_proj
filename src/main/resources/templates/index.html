@@ -1,0 +1,1866 @@
+
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+ 	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>성공하는공장</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+
+	<!-- <link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/css/ol.css" type="text/css"> -->
+
+	<!-- 아이콘폰트 -->
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/xeicon.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/fontawesome.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/brands.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/solid.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- 슬라이더 -->
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/slick.css">
+
+	<!-- 부트스트랩 -->
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/bootstrap-theme.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/jquery-ui.css" />
+
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/menu.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/new/share/css/board.css" />
+
+	<script type="text/javascript" src="/resources/new/share/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/resources/new/share/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/resources/new/share/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/resources/new/share/js/slick.min.js"></script>
+
+	<!--<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/build/ol.js"></script>-->
+	<script type="text/javascript" src="/resources/new/share/js/common.js"></script>
+	
+<!-- ol-ext -->
+<link rel="stylesheet" href="/resources/css/ol-ext.min.css" />
+<!-- CUSTOM CSS Files -->
+<link rel="stylesheet" href="/resources/css/ol.css" type="text/css">
+
+<link href="/resources/css/home_new.css" rel="stylesheet" />
+<link href="/resources/js/sjmap/sjmap_new.css" rel="stylesheet" />
+<!-- <link href="https://cdn.osmbuildings.org/4.0.7/OSMBuildings.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+	<div class="wrap">
+		<header>
+			<div class="logo">
+				<a href="#">
+					<!-- <img src="/resources/new/img/top_logo.png"> -->
+					<!-- <img class="logo" src="https://img.jobkorea.co.kr/trans/c/200x80/s/e/JK_Co_seongjang2020.png" alt="성공하는공장"> -->
+					<img class="logo" src="/resources/new/img/seongjang01.png" style="width: 3%;" alt="성공하는공장">
+					<img class="logo" src="/resources/new/img/seongjang02.png" style="width: 5%;" alt="성공하는공장">
+				</a>
+				<div class="gnb s_tt gray_tt">
+					<a href="#">로그인</a><span>ㅣ</span>
+					<a href="#">MY PAGE</a><span>ㅣ</span>
+					<a href="#">설정</a>
+				</div>
+			</div>
+			<ul class="menu">
+				<li><button>기반시설</button>
+					<div class="sub_menu">
+						<div>
+							<ul>
+								<!-- <li><p>유틸리티</p></li> -->
+								<li><span class="on"><i class="fas fa-bolt"></i>전기</span></li>
+								<li><button class="notInputBtn">지역별 전기 요금</button></li>
+								<!-- <li><button>Top메뉴1-1-2</button></li>-->
+								<br>
+							</ul>
+							<ul>
+								<li><span class="on"><i class="fas fa-faucet"></i>수도</span></li>
+								<li><button class="notInputBtn">지역별 수도 요금</button></li>
+								<!-- <li><button>Top메뉴1-2-2</button></li>
+											<li><button>Top메뉴1-2-3</button></li> -->
+								<br>
+							</ul>
+							<ul>
+								<li><span class="on"><i class="fas fa-oil-can"></i>가스</span></li>
+								<li><button class="notInputBtn">지역별 도시가스 공급 업체</button></li>
+								<li><button class="notInputBtn">도시가스 미공급 지역</button></li>
+								<!-- <li><button>Top메뉴1-3-3</button></li>
+											<li><button>Top메뉴1-3-4</button></li> -->
+								<br>
+							</ul>
+							<ul>
+								<li><span class="on"><i class="fas fa-fire-alt"></i>열(스팀)</span></li>
+								<li><button class="notInputBtn">스팀 공급되는 산업단지</button></li>
+								<!-- <li><button>Top메뉴1-4-2</button></li>
+											<li><button>Top메뉴1-4-3</button></li>
+											<li><button>Top메뉴1-4-4</button></li> -->
+								<br>
+							</ul>
+							<ul>
+								<li><span class="on"><i class="fas fa-tint-slash"></i>폐수</span></li>
+								<li><button onclick="swgtr_fclty()">폐수처리장</button></li>
+								<!-- <li><button>Top메뉴1-5-2</button></li>
+											<li><button>Top메뉴1-5-3</button></li> -->
+								<br>
+							</ul>
+							<ul>
+								<li><span class="on"><i class="fas fa-recycle"></i>폐기물</span></li>
+								<li><button onclick="waste_fclty('2')">지정 폐기물 재활용업 허가 기업</button></li>
+								<li><button onclick="waste_fclty('1')">사업장 폐기물 재활용업 허가 기업</button></li>
+								<li><button onclick="waste_fclty_sandan('2')">산업단지내 지정 폐기물 재활용업 허가 기업</button></li>
+								<li><button onclick="waste_fclty_sandan('1')">산업단지내 사업장 폐기물 재활용업 허가 기업</button></li>
+								<li><button class="notInputBtn">폐기물 수집운반업 허가 기업(생활/사업장)</button></li>
+								<li><button class="notInputBtn">폐기물 수집운반업 허가 기업(건설)</button></li>
+								<li><button class="notInputBtn">폐기물 수집운반업 허가 기업(지정)</button></li>
+								<li><button class="notInputBtn">폐기물 수집운반업 허가 기업(사업장/소각)</button></li>
+								<li><button class="notInputBtn">폐기물 최종처분 기업(매립) : 사업장</button></li>
+								<li><button class="notInputBtn">폐기물 최종처분 기업(매립) : 지정</button></li>
+								<br>
+							</ul>
+							<!-- <ul>
+											<li><span>수도</span></li>
+											<li><button>Top메뉴1-5-1</button></li>
+											<li><button>Top메뉴1-5-2</button></li>
+											<li><button>Top메뉴1-5-3</button></li>
+											<li><button>Top메뉴1-5-4</button></li>
+										</ul> -->
+						</div>
+					</div>
+				</li>
+				<li><button>제조연관산업</button>
+					<div class="sub_menu">
+						<div>
+							<ul>
+								<li><span class="on">스마트공장(& IT)</span></li>
+								<li><button onclick="supply_companies()">스마트공장 공급 기업</button></li>
+								<!-- <li><button>Top메뉴2-1-2</button></li> -->
+							</ul>
+							<ul>
+								<li><span class="on">산업디자인</span></li>
+								<li><button class="notInputBtn">산업디자인 전문회사</button></li>
+								<!-- <li><button>Top메뉴2-2-2</button></li>
+											<li><button>Top메뉴2-2-3</button></li> -->
+							</ul>
+							<!-- <ul>
+											<li><span>폐기물</span></li>
+											<li><button>Top메뉴2-3-1</button></li>
+											<li><button>Top메뉴2-3-2</button></li>
+											<li><button>Top메뉴2-3-3</button></li>
+											<li><button>Top메뉴2-3-4</button></li>
+										</ul>
+										<ul>
+											<li><span>폐기물</span></li>
+											<li><button>Top메뉴2-4-1</button></li>
+											<li><button>Top메뉴2-4-2</button></li>
+											<li><button>Top메뉴2-4-3</button></li>
+											<li><button>Top메뉴2-4-4</button></li>
+										</ul>
+										<ul>
+											<li><span>폐기물</span></li>
+											<li><button>Top메뉴2-5-1</button></li>
+											<li><button>Top메뉴2-5-2</button></li>
+											<li><button>Top메뉴2-5-3</button></li>
+										</ul>
+										<ul>
+											<li><button>Sub메뉴2-4</button></li>
+											<li><button>Top메뉴2-4-1</button></li>
+											<li><button>Top메뉴2-4-2</button></li>
+											<li><button>Top메뉴2-4-3</button></li>
+											<li><button>Top메뉴2-4-4</button></li>
+										</ul>
+										<ul>
+											<li><button>Sub메뉴2-5</button></li>
+											<li><button>Top메뉴2-5-1</button></li>
+											<li><button>Top메뉴2-5-2</button></li>
+											<li><button>Top메뉴2-5-3</button></li>
+											<li><button>Top메뉴2-5-4</button></li>
+										</ul> -->
+						</div>
+					</div>
+				</li>
+				<li><button>인증/인허가</button>
+					<!-- <div class="sub_menu">
+						<div>
+							<ul>
+								<li><span>스마트공장(& IT)</span></li>
+								<li><button onclick="supply_companies()">스마트공장 공급 기업</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>산업디자인</span></li>
+								<li><button class="notInputBtn">산업디자인 전문회사</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-3-1</button></li>
+								<li><button>Top메뉴2-3-2</button></li>
+								<li><button>Top메뉴2-3-3</button></li>
+								<li><button>Top메뉴2-3-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-4</button></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-5</button></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+								<li><button>Top메뉴2-5-4</button></li>
+							</ul>
+						</div>
+					</div> -->
+				</li>
+				<li><button>제조지원</button>
+					<!-- <div class="sub_menu">
+						<div>
+							<ul>
+								<li><span>스마트공장(& IT)</span></li>
+								<li><button onclick="supply_companies()">스마트공장 공급 기업</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>산업디자인</span></li>
+								<li><button class="notInputBtn">산업디자인 전문회사</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-3-1</button></li>
+								<li><button>Top메뉴2-3-2</button></li>
+								<li><button>Top메뉴2-3-3</button></li>
+								<li><button>Top메뉴2-3-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-4</button></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-5</button></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+								<li><button>Top메뉴2-5-4</button></li>
+							</ul>
+						</div>
+					</div> -->
+				</li>
+				<li><button>수출</button>
+					<!-- <div class="sub_menu">
+						<div>
+							<ul>
+								<li><span>스마트공장(& IT)</span></li>
+								<li><button onclick="supply_companies()">스마트공장 공급 기업</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>산업디자인</span></li>
+								<li><button class="notInputBtn">산업디자인 전문회사</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-3-1</button></li>
+								<li><button>Top메뉴2-3-2</button></li>
+								<li><button>Top메뉴2-3-3</button></li>
+								<li><button>Top메뉴2-3-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-4</button></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-5</button></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+								<li><button>Top메뉴2-5-4</button></li>
+							</ul>
+						</div>
+					</div> -->
+				</li>
+				<li><button>K-성장산업</button>
+					<!-- <div class="sub_menu">
+						<div>
+							<ul>
+								<li><span>스마트공장(& IT)</span></li>
+								<li><button onclick="supply_companies()">스마트공장 공급 기업</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>산업디자인</span></li>
+								<li><button class="notInputBtn">산업디자인 전문회사</button></li>
+					
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-3-1</button></li>
+								<li><button>Top메뉴2-3-2</button></li>
+								<li><button>Top메뉴2-3-3</button></li>
+								<li><button>Top메뉴2-3-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><span>폐기물</span></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-4</button></li>
+								<li><button>Top메뉴2-4-1</button></li>
+								<li><button>Top메뉴2-4-2</button></li>
+								<li><button>Top메뉴2-4-3</button></li>
+								<li><button>Top메뉴2-4-4</button></li>
+							</ul>
+							<ul>
+								<li><button>Sub메뉴2-5</button></li>
+								<li><button>Top메뉴2-5-1</button></li>
+								<li><button>Top메뉴2-5-2</button></li>
+								<li><button>Top메뉴2-5-3</button></li>
+								<li><button>Top메뉴2-5-4</button></li>
+							</ul>
+						</div>
+					</div> -->
+				</li>
+				<li><button>임시작업</button>
+					<div class="sub_menu">
+						<div>
+							<ul>
+								<li><span class="on"><i class="fas fa-exclamation"></i>긴급요청</span></li>
+								<li><button onclick="reg_fac_list(1)">산업단지내 등록공장</button></li>
+								<li><button onclick="reg_fac_list(2)">산업디자인 전문회사</button></li>
+								<!-- <li><button>Top메뉴2-1-2</button></li> -->
+							</ul>
+							<!-- <ul>
+											<li><span>폐기물</span></li>
+											<li><button>Top메뉴2-3-1</button></li>
+											<li><button>Top메뉴2-3-2</button></li>
+											<li><button>Top메뉴2-3-3</button></li>
+											<li><button>Top메뉴2-3-4</button></li>
+										</ul>
+										<ul>
+											<li><span>폐기물</span></li>
+											<li><button>Top메뉴2-4-1</button></li>
+											<li><button>Top메뉴2-4-2</button></li>
+											<li><button>Top메뉴2-4-3</button></li>
+											<li><button>Top메뉴2-4-4</button></li>
+										</ul>
+										<ul>
+											<li><span>폐기물</span></li>
+											<li><button>Top메뉴2-5-1</button></li>
+											<li><button>Top메뉴2-5-2</button></li>
+											<li><button>Top메뉴2-5-3</button></li>
+										</ul>
+										<ul>
+											<li><button>Sub메뉴2-4</button></li>
+											<li><button>Top메뉴2-4-1</button></li>
+											<li><button>Top메뉴2-4-2</button></li>
+											<li><button>Top메뉴2-4-3</button></li>
+											<li><button>Top메뉴2-4-4</button></li>
+										</ul>
+										<ul>
+											<li><button>Sub메뉴2-5</button></li>
+											<li><button>Top메뉴2-5-1</button></li>
+											<li><button>Top메뉴2-5-2</button></li>
+											<li><button>Top메뉴2-5-3</button></li>
+											<li><button>Top메뉴2-5-4</button></li>
+										</ul> -->
+						</div>
+					</div>
+				</li>
+				<!-- <li><button>TOP메뉴 8</button></li>
+							<li><button>TOP메뉴 9</button></li>
+							<li><button>TOP메뉴 10</button></li>
+							<li><button>TOP메뉴 11</button></li>
+							<li><button>TOP메뉴 12</button></li>
+							<li><button>TOP메뉴 13</button></li>
+							<li><button>TOP메뉴 14</button></li>
+							<li><button>TOP메뉴 15</button></li>
+							<li><button>TOP메뉴 16</button></li>
+							<li><button>TOP메뉴 17</button></li> -->
+				<li><span class="top_search"><i class="xi-search"></i></span>
+					<div class="top_search_wrap">
+						<div>
+							<table>
+								<colgroup>
+									<col style="width: 10%;" />
+									<col style="width: 40%;" />
+									<col style="width: 10%;" />
+									<col style="width: 40%;" />
+								</colgroup>
+								<tr>
+									<th>타이틀검색</th>
+									<td>
+										<p><label><input type="checkbox"><i></i> 전체</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴1</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴2</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴3</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴4</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴5</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴6</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴7</label></p>
+									</td>
+									<th rowspan="2">검색_1</th>
+									<td rowspan="2">
+										<ul class="row">
+											<!-- <li class="col-xs-10"><input type="text" placeholder="입력해주세요"></li>
+											<li class="col-xs-2"><button type="button" class="btn_line"><i
+														class="xi-search"></i></button></li> -->
+											<li class="col-xs-4"><input type="text" name="danji_div_code_" placeholder="지역명 ex) 화성시" autocomplete="off" maxlength="5" value="경기"></li>
+											<li class="col-xs-6"><input type="text" name="danji_ind_code_" placeholder="산업단지 검색" aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off"></li>
+											<li class="col-xs-2"><button type="button" class="btn_line" name="SearchBtn" onclick="srch_danji($('input[name=danji_div_code_]').val(),$('input[name=danji_ind_code_]').val())"><i class="xi-search"></i></button>
+											<li class="col-xs-4"><input type="text" name="ksic_div_code_" placeholder="지역명 ex) 화성시" autocomplete="off"></li>
+											<li class="col-xs-6"><input type="text" name="ksic_ind_code_" placeholder="업종명·코드" autocomplete="off"></li>
+											<li class="col-xs-2"><button type="button" class="btn_line" name="SearchBtn" onclick="pointMarker_($('input[name=ksic_ind_code_]').val())"><i class="xi-search"></i></button>
+											<li class="col-xs-6"><div class='dropdown-menu_' id="dropList_" style="z-index: 1001;"></div></li>	
+										</ul>
+										<ul class="row">
+											<li class="col-xs-10"><input type="text" placeholder="입력해주세요"></li>
+											<li class="col-xs-2"><button type="button" class="btn_line"><i
+														class="xi-search"></i></button></li>
+										</ul>
+										<ul class="row">
+											<li class="col-xs-10"><input type="text" placeholder="입력해주세요"></li>
+											<li class="col-xs-2"><button type="button" class="btn_line"><i
+														class="xi-search"></i></button></li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th>카테고리검색</th>
+									<td>
+										<p><label><input type="checkbox"><i></i> 전체</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴1</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴2</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴3</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴4</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴5</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴6</label></p>
+										<p><label><input type="checkbox"><i></i> 조건메뉴7</label></p>
+									</td>
+								</tr>
+							</table>
+							<div class="btn_wrap">
+								<button type="button" class="btn_co_1">검색</button>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</header>
+		<div class="body">
+			<div class="left_menu scroll">
+				<ul>
+					<li class="search_btn">
+						<div>
+							<i class="xi-search"></i>
+						</div>
+					</li>
+					<li class="de00_btn">
+						<div>
+							<i class="fas fa-search-location"></i>
+							<p>공장검색정보</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de01_btn">
+						<div>
+							<i class="fas fa-city"></i>
+							<p>기반시설</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de02_btn">
+						<div>
+							<i class="fas fa-store"></i>
+							<p>제조연관사업</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de03_btn">
+						<div>
+							<i class="fas fa-stamp"></i>
+							<p>인증/인허가</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de04_btn">
+						<div>
+							<i class="fas fa-store-alt"></i>
+							<p>제조지원</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de05_btn">
+						<div>
+							<i class="fas fa-trailer"></i>
+							<p>수출</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de06_btn">
+						<div>
+							<i class="fas fa-chart-line"></i>
+							<p>K-성장산업</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+					<li class="de07_btn">
+						<div>
+							<i class="fas fa-space-shuttle"></i>
+							<p>임시작업</p>
+							<span><label><input type="checkbox"><i></i></label></span>
+							<span><i class="xi-close-thin"></i></span>
+						</div>
+					</li>
+				</ul>
+			</div><!-- left_menu -->
+
+			<div class="search_wrap scroll">
+				<div class="depth_btn">&#xE000;</div>
+				<form>
+
+					<p class="title">타이틀검색</p>
+					<ul class="row bt_wrap">
+						<li><label><input type="checkbox" checked><span>전체</span></label></li>
+						<li><label><input type="checkbox"><span>국가산업단지</span></label></li>
+						<li><label><input type="checkbox"><span>일반산업단지</span></label></li>
+						<li><label><input type="checkbox"><span>지식산업센터</span></label></li>
+						<li><label><input type="checkbox"><span>농공단지</span></label></li>
+						<!-- <li><label><input type="checkbox"><span>조건메뉴5</span></label></li>
+						<li><label><input type="checkbox"><span>조건메뉴6</span></label></li>
+						<li><label><input type="checkbox"><span>조건메뉴7</span></label></li> -->
+					</ul>
+
+					<div class="line"><span></span></div>
+
+					<p class="title">카테고리검색</p>
+					<ul class="row bt_wrap">
+						<li><label><input type="checkbox"><span>전체</span></label></li>
+						<li><label><input type="checkbox"><span>연구단지</span></label></li>
+						<li><label><input type="checkbox"><span>제조업육성지구</span></label></li>
+						<li><label><input type="checkbox" checked><span><a href="https://www.bjfez.go.kr/vr/pc/" target="_blank">경제자유구역</a></span></label></li>
+						<li><label><input type="checkbox"><span>벤처기업육성촉진지구</span></label></li>
+						<!-- <li><label><input type="checkbox"><span>조건메뉴5</span></label></li>
+						<li><label><input type="checkbox"><span>조건메뉴6</span></label></li>
+						<li><label><input type="checkbox"><span>조건메뉴7</span></label></li> -->
+						<div class="video_wrap" style="display: block;">
+							<div class="video youtube" id="youtube">
+								<!-- <div><img src="/resources/new/img/vedio_list.png">1</div> -->
+								<!-- <div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/NPcsyXdBx8o?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+								<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/olpo_7wUQQg?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+	
+							</div>
+	
+							<div class="video-nav">
+								<div><img src="http://img.youtube.com/vi/NPcsyXdBx8o/0.jpg"><h6>새만금 드론영상</h6></div>
+								<div><img src="http://img.youtube.com/vi/olpo_7wUQQg/0.jpg"><h6>새만금 현장견학</h6></div>
+							</div>
+						</div><!-- video_wrap -->
+					</ul>
+
+					<div class="line"><span></span></div>
+
+					<p class="title">검색</p>
+					<ul class="row input_wrap">
+						<!-- <li class="col-xs-10"><input type="text" placeholder="입력해주세요"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line"><i class="xi-search"></i></button>
+						</li>
+						<li class="col-xs-10"><input type="text" placeholder="입력해주세요"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line"><i class="xi-search"></i></button>
+						</li> -->
+						<li class="col-xs-4"><input type="text" name="danji_div_code" placeholder="지역명 ex) 화성시" autocomplete="off" maxlength="5" value="경기"></li>
+						<li class="col-xs-6"><input type="text" name="danji_ind_code" placeholder="산업단지 검색" aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line" name="SearchBtn" onclick="srch_danji($('input[name=danji_div_code]').val(),$('input[name=danji_ind_code]').val())"><i class="xi-search"></i></button>
+						<li class="col-xs-4"><input type="text" name="ksic_div_code" placeholder="지역명 ex) 화성시" autocomplete="off"></li>
+						<li class="col-xs-6"><input type="text" name="ksic_ind_code" placeholder="업종명·코드" autocomplete="off"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line" name="SearchBtn" onclick="pointMarker_($('input[name=ksic_ind_code]').val())"><i class="xi-search"></i></button>
+						<li class="col-xs-6"><div class='dropdown-menu' id="dropList" style="z-index: 1001;"></div></li>	
+					</ul>
+
+					<div class="line"><span></span></div>
+
+					<p class="title">주소검색</p>
+					<ul class="row input_wrap">
+						<!-- <li class="col-xs-4"><input type="text" placeholder="주소"></li>
+						<li class="col-xs-6"><input type="text" placeholder="주소2"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line"><i class="xi-search"></i></button>
+						</li> -->
+						<li class="col-xs-10"><input type="text" placeholder="주소 검색" id="srch_address" name="srch_address" aria-haspopup="true" aria-expanded="false" autocomplete="off" value="서초대로 49길 11"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line" onclick="srch_addr($('input[name=srch_address]').val())"><i class="xi-search"></i></button>
+					</ul>
+
+					<div class="line"><span></span></div>
+
+					<p class="title">엑셀검색</p>
+					<!-- <ul class="row input_wrap"> -->
+					<ul class="row bt_wrap">
+						<!-- <li class="col-xs-4"><input type="text" placeholder="주소"></li>
+						<li class="col-xs-6"><input type="text" placeholder="주소2"></li>
+						<li class="col-xs-2"><button type="button" class="btn_line"><i class="xi-search"></i></button>
+						</li> -->
+						<li class="col-xs-12"><label><span><a href="/resources/new/share/file/Sample_Data.xlsx" target="_blank"><i class="xi-file-download-o"></i>엑셀 업로드 양식 다운로드(샘플)</a></span></label></li>
+						<!-- <li></li> -->
+						<li class="col-xs-6"><label><input type="radio" name="addr" value="road"><span class="radio_input_span">도로명주소</span></label></li>
+						<li class="col-xs-6"><label><input type="radio" name="addr" value="parcel"><span class="radio_input_span">지번주소</span></label></li>
+						<li class="col-xs-8">
+							<input type="text" placeholder="엑셀파일을 첨부해주세요" id="excel_address" name="excel_address" aria-haspopup="true" aria-expanded="false" autocomplete="off" value="파일첨부를 해주세요." onclick="excelUpload_function();">
+							<input type="file" id="file_3" class="hidden file_3" onchange="input_ReadExcel()">
+						</li>
+						<li class="col-xs-2">
+								<button type="button" class="btn_line" onclick="readExcel_Marker($('input:radio[name=addr]:checked').val())" value="데이터변환"><i class="xi-exchange"></i>
+								</button>
+						</li>
+						<li class="col-xs-2">
+							<button type="button" id="add_marker_btn" class="btn_line" onclick="add_Feature_Marker($('input:radio[name=addr]:checked').val())" value="지도에추가"><i class="xi-search"></i>
+							</button>
+						</li>
+						<li class="col-xs-12">
+							<div id="progressbar" class="" style="height: 10px;"></div>
+						</li>
+						<li class="hidden" id="count1"><label><input type="radio" name="read_count" value=""><span id="read_count" class="radio_input_span">총 갯수 : 0</span></label></li>
+						<li class="hidden" id="count2"><label><input type="radio" name="exc_count" value=""><span id="exc_count" class="radio_input_span">변환 갯수 : 0</span></label></li>
+					</ul>
+					<!--<div class="video_wrap">
+						<div class="video youtube" id="youtube">
+							 <div><img src="/resources/new/img/vedio_list.png">1</div> 막으세요~
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/azGg68B-Glk?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/6Sq-TC2p9jk?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/6qYtmyS8yuw?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/qrs9dRkEDPQ?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/MJZ4DZ1pAPc?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/7rxyranHX-U?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/YAV2LdzFq7g?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/3kKb8Lla-64?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/RhqLg_2BHuE?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/_XK9CtHb07M?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/VLXxyMuSb5U?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+						</div>
+
+						<div class="video-nav">
+							<div><img src="http://img.youtube.com/vi/azGg68B-Glk/0.jpg">1</div>
+							<div><img src="http://img.youtube.com/vi/6Sq-TC2p9jk/0.jpg">2</div>
+							<div><img src="http://img.youtube.com/vi/6qYtmyS8yuw/0.jpg">3</div>
+							<div><img src="http://img.youtube.com/vi/qrs9dRkEDPQ/0.jpg">4</div>
+							<div><img src="http://img.youtube.com/vi/MJZ4DZ1pAPc/0.jpg">5</div>
+							<div><img src="http://img.youtube.com/vi/7rxyranHX-U/0.jpg">6</div>
+							<div><img src="http://img.youtube.com/vi/YAV2LdzFq7g/0.jpg">7</div>
+							<div><img src="http://img.youtube.com/vi/3kKb8Lla-64/0.jpg">8</div>
+							<div><img src="http://img.youtube.com/vi/RhqLg_2BHuE/0.jpg">9</div>
+							<div><img src="http://img.youtube.com/vi/_XK9CtHb07M/0.jpg">10</div>
+							<div><img src="http://img.youtube.com/vi/VLXxyMuSb5U/0.jpg">11</div>
+						</div>
+					</div> --><!-- video_wrap -->
+
+				</form>
+			</div><!-- search_wrap -->
+
+			<!-- 공장검색 -->
+			<div class="depth00_wrap scroll">
+				<div class="de00_btn depth_btn">&#xE000;</div>
+				<div class="tab">
+					<ul class="tab_04">
+						<li class="act01 on" data-tab="cate_0_1">공장정보</li>
+						<li data-tab="cate_0_2" class="act02">입주가능산단</li>
+						<li data-tab="cate_0_3" class="act03">관리기본계획</li>
+						<li data-tab="cate_0_4" class="act04">주요산업형태</li>
+					</ul>
+				</div><!-- tab -->
+				<div class="content">
+
+					<div id="cate_0_1" class="de00_cate_con on">
+						<!-- <div class="cate">
+							<ul class="cate_04">
+								<li>시도</li>
+								<li>군구</li>
+								<li>읍면동</li>
+								<li>특별지구</li>
+							</ul>
+						</div> -->
+						<!-- <p class="title">시도</p> -->
+						<p class="title">공장정보</p>
+						<div class="graph_wrpa industry_video">
+
+						</div><!-- graph_wrpa -->
+
+						<dl class="faq">
+							<dt class="">
+								등록공장정보 <span></span>
+							</dt>
+							<dd id="factory_info">
+								선택하신 공장이 없습니다.<br />
+							</dd>
+							<dt>
+								스마트공장 공급기업 <span></span>
+							</dt>
+							<dd class="supply_companies_info">
+								선택하신 스마트공장 IT기업이 없습니다.<br />
+							</dd>
+							<dt>
+								하수처리시설 정보 <span></span>
+							</dt>
+							<dd class="swgtr_fclty_info">
+								선택하신 하수 처리시설이 없습니다.<br />
+							</dd>
+							<dt>
+								폐기물 처리시설 정보 <span></span>
+							</dt>
+							<dd class="waste_fclty_info">
+								선택하신 폐기물 처리시설이 없습니다.<br />
+							</dd>
+							<dt id="excel_data_title">
+								엑셀파일 업로드 정보 <span></span>
+							</dt>
+							<dd id="excel_data_info">
+								선택하신 정보가 없습니다.<br />
+							</dd>
+							<dt>
+								이달의 주요 제조업 <span></span>
+							</dt>
+							<dd>
+								<div>
+									<span class="title" >
+										<a href="http://hslpl.com/" target="_blank">
+											<img src="/resources/new/img/K-034.png">
+										</a>
+										<a href="http://www.eicc.co.kr/" target="_blank">
+											<img src="/resources/new/img/K-035.png">
+										</a>
+										<br>
+										(주)효산엘피엘 / (주)아이씨씨 <br />
+										대표전화 : (031) 495-5758 <br />
+										FAX : (031) 491-5749
+									</span>
+								</div>
+								<br />
+								<div id="hs_brochure"></div>
+								<br />
+							</dd>
+							<dt>
+								이달의 주요 매출기업 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								주요 협력업체 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								산업별 주 원료 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+						</dl>
+					</div><!-- cate_1 -->
+
+					<div id="cate_0_2" class="de00_cate_con">
+						<p class="title">산업단지정보</p>
+						<div class="graph_wrpa industry_video2">
+							<!-- <iframe width="100%" height="400px" src="https://www.youtube.com/embed/kYw-bFI57gE?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+						</div><!-- graph_wrpa -->
+						<dl class="faq">
+							<dt class="de01_02_btn">
+								산업단지 입주가능업종 <span></span>
+							</dt>
+							<dd id="left_tab-2" class="bc_2">
+								검색하신 산업단지를 선택해주세요.<br />
+							</dd>
+							<dt>
+								해당 산업단지 기반시설 <span></span>
+							</dt>
+							<dd>
+								<div class="">
+									<span class="title">
+										<a href="https://www.busanpa.com/kor/Main.do" target="_blank"><img src="/resources/new/img/K-037.png"></a><br>
+										부산항만공사<br />
+										전화번호 : 051-999-3000
+									</span><br />
+								</div>
+							</dd>
+							<dt>
+								해당 산업단지 유틸리티 <span></span>
+							</dt>
+							<dd>
+								<div class="">
+									<div class="" style="float: left; margin: 5px;">
+										<span class="title">
+											<a href="https://cyber.kepco.co.kr/ckepco/front/jsp/CY/E/E/CYEEHP00103.jsp" target="_blank"><img src="/resources/new/img/K-046.png"></a><br>
+											전기요금(종합)<br />
+											전화번호 : 국번없이 123
+										</span>
+									</div>
+									<div class="">
+										<span class="title">
+											<a href="https://www.kogas.or.kr:9450/portal/contents.do?key=2024" target="_blank"><img src="/resources/new/img/K-047.png"></a><br>
+											한국가스공사<br />
+											전화번호 : 053-670-0114
+										</span>
+									</div>
+									<div class="line"><span></span></div>
+									<div class="" style="">
+										<span class="title">
+											<a href="https://sf.kbiz.or.kr/" target="_blank"><img src="/resources/new/img/K-057.png"></a><br>
+											스마트공장 매칭플랫폼<br />
+											전화번호 : 053-670-0114
+										</span>
+										<img src="/resources/new/img/K-060.png"><br />
+									</div>
+									<div class="line"><span></span></div>
+									<div class="">
+										<span class="title">
+											<a href="https://www.kogas.or.kr:9450/portal/contents.do?key=2024" target="_blank"><img src="/resources/new/img/K-058.png"></a><br>
+											지식재산공제<br />
+											전화번호 : 1544-1120
+										</span>
+										<img src="/resources/new/img/K-059.png"><br />
+									</div>
+									<div class="line"><span></span></div>
+								</div>
+							</dd>
+							<dt>
+								전기요금 <a href="https://cyber.kepco.co.kr/ckepco/indexnfl.jsp" target="_blank">상세보기</a> <span></span>
+							</dt>
+							<dd>
+								<img src="/resources/new/img/K-045.png"><br />
+								<img src="/resources/new/img/K-038.png"><br />
+								<img src="/resources/new/img/K-039.png"><br />
+								<img src="/resources/new/img/K-040.png"><br />
+								<img src="/resources/new/img/K-041.png"><br />
+								<img src="/resources/new/img/K-042.png"><br />
+								<img src="/resources/new/img/K-043.png"><br />
+								<img src="/resources/new/img/K-044.png"><br />
+							</dd>
+							<dt>
+								해당 산업단지 인센티브 <span></span>
+							</dt>
+							<dd>
+								<div class="">
+									<h4 class="title">
+										<a href="http://xn--5-4t8e98uowe6xgsva86grju0bg4j25jwq5a.kr/website/index.html" target="_blank"><img src="/resources/new/img/cheun5.png"></a><br>
+										천안제5일반산업단지 확장분양<br />
+										전화번호 : 1599-8910
+									</h4><br />
+								</div><br />
+								<p class="title">입주자격</p><br />
+								<img src="/resources/new/img/insan01.png"><br />
+								<p class="title">입주혜택</p><br />
+								지방투자촉진 보조금지원<br />
+								<img src="/resources/new/img/insan02.png"><br />
+								대상자<br />
+								<img src="/resources/new/img/insan03.png"><br />
+							</dd>
+							<!-- <dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd> -->
+						</dl>
+					</div><!-- cate_2 -->
+
+					<div id="cate_0_3" class="de00_cate_con">
+						<p class="title">관리기본계획</p>
+						<div class="graph_wrpa industry_video3">
+
+						</div><!-- graph_wrpa -->
+						<dl class="faq">
+							<dt class="">
+								해당 산업단지 관리기본계획 <span></span>
+							</dt>
+							<dd id="myPdf">
+								검색하신 산업단지를 선택해주세요.<br />
+							</dd>
+							<dt>
+								산업별 가능한 업종(상세) <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								환경규제(상세) <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								주요 입주절차 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								사전 필수 서류목록 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+						</dl>
+					</div><!-- cate_3 -->
+
+					<div id="cate_0_4" class="de00_cate_con">
+						<dl class="faq">
+							<dt class="">
+								해당산업단지 외 주요산업 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								주변 클러스터 형성상태 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								인근 주거시설 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								주요 교통로 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								창고시설 현황 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								용달 화물요금 검색 <span></span>
+							</dt>
+							<dd>
+								<a href="https://dadaex.modoo.at/?link=o6bxpnes"><b>다다익스</b></a>에서 빅데이터기반 용달비용을 검색해보세요.<br />
+							</dd>
+						</dl>
+					</div><!-- cate_4 -->
+
+				</div><!-- content -->
+			</div><!-- depth01_wrap -->
+
+			<!-- 기반시설 -->
+			<div class="depth01_wrap scroll">
+				<div class="de01_btn depth_btn">&#xE000;</div>
+				<div class="tab">
+					<ul class="tab_06">
+						<li class="on" data-tab="cate_1">전기</li>
+						<li data-tab="cate_2">수도</li>
+						<li data-tab="cate_3">가스</li>
+						<li data-tab="cate_4">열(스팀)</li>
+						<li data-tab="cate_5">폐수</li>
+						<li data-tab="cate_6">폐기물</li>
+					</ul>
+				</div><!-- tab -->
+				<div class="content">
+
+					<div id="cate_1" class="cate_con on">
+						<!-- <div class="cate">
+							<ul class="cate_04">
+								<li>시도</li>
+								<li>군구</li>
+								<li>읍면동</li>
+								<li>특별지구</li>
+							</ul>
+						</div> -->
+						<!-- <p class="title">시도</p> -->
+						<p class="title">전기</p>
+						<div class="graph_wrpa">
+							<div class="video_wrap">
+								<div class="video youtube" id="youtube">
+									<!-- <div><img src="/resources/new/img/vedio_list.png">1</div> -->
+									<!-- <div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/azGg68B-Glk?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/6Sq-TC2p9jk?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/6qYtmyS8yuw?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/qrs9dRkEDPQ?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/MJZ4DZ1pAPc?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/7rxyranHX-U?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/YAV2LdzFq7g?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/3kKb8Lla-64?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/RhqLg_2BHuE?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/_XK9CtHb07M?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									<div><iframe width="100%" height="200px" src="https://www.youtube.com/embed/VLXxyMuSb5U?autoplay=0&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+		
+								</div>
+		
+								<div class="video-nav">
+									<div><img src="http://img.youtube.com/vi/azGg68B-Glk/0.jpg">1</div>
+									<div><img src="http://img.youtube.com/vi/6Sq-TC2p9jk/0.jpg">2</div>
+									<div><img src="http://img.youtube.com/vi/6qYtmyS8yuw/0.jpg">3</div>
+									<div><img src="http://img.youtube.com/vi/qrs9dRkEDPQ/0.jpg">4</div>
+									<div><img src="http://img.youtube.com/vi/MJZ4DZ1pAPc/0.jpg">5</div>
+									<div><img src="http://img.youtube.com/vi/7rxyranHX-U/0.jpg">6</div>
+									<div><img src="http://img.youtube.com/vi/YAV2LdzFq7g/0.jpg">7</div>
+									<div><img src="http://img.youtube.com/vi/3kKb8Lla-64/0.jpg">8</div>
+									<div><img src="http://img.youtube.com/vi/RhqLg_2BHuE/0.jpg">9</div>
+									<div><img src="http://img.youtube.com/vi/_XK9CtHb07M/0.jpg">10</div>
+									<div><img src="http://img.youtube.com/vi/VLXxyMuSb5U/0.jpg">11</div>
+								</div>
+							</div><!-- video_wrap -->
+						</div><!-- graph_wrpa -->
+
+						<dl class="faq">
+							<dt class="de01_02_btn">
+								Top메뉴 1-1-1 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-1 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+						</dl>
+					</div><!-- cate_1 -->
+
+					<div id="cate_2" class="cate_con">
+						<dl class="faq">
+							<dt class="">
+								지역별 전기사용량 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								지자체별 전기사용량 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								지자체별 전기요금 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+						</dl>
+					</div><!-- cate_2 -->
+
+					<div id="cate_3" class="cate_con">
+						<dl class="faq">
+							<dt class="">
+								Top메뉴 1-1-1 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-1 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+						</dl>
+					</div><!-- cate_3 -->
+
+					<div id="cate_4" class="cate_con">
+						<dl class="faq">
+							<dt class="">
+								Top메뉴 1-1-1 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-1 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+							<dt>
+								Top메뉴 1-1-2 <span></span>
+							</dt>
+							<dd>
+								내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용<br />내용
+							</dd>
+						</dl>
+					</div><!-- cate_4 -->
+
+					<div id="cate_5" class="cate_con">
+						<dl class="faq">
+							<dt class="">
+								하수처리 시설정보 <span></span>
+							</dt>
+							<dd id="waste_fclty_info">
+								선택하신 하수처리시설이 없습니다.<br />
+							</dd>
+						</dl>
+					</div><!-- cate_5 -->
+
+					<div id="cate_6" class="cate_con">
+						<dl class="faq">
+							<dt class="">
+								폐기물처리 시설정보 <span></span>
+							</dt>
+							<dd id="swgtr_fclty_info">
+								폐기물처리 시설을 선택해주세요.<br />
+							</dd>
+						</dl>
+					</div><!-- cate_6 -->
+
+				</div><!-- content -->
+			</div><!-- depth01_wrap -->
+
+			<div class="depth02_wrap scroll">
+				<div class="depth_btn">&#xE000;</div>
+
+				<div class="cate">
+					<ul class="cate_06">
+						<li class="on" data-tab="tab_1">브로슈어</li>
+						<li data-tab="tab_2">정부홍보</li>
+						<li data-tab="tab_3">조세지원</li>
+						<li data-tab="tab_4">정부행사</li>
+						<!-- <li data-tab="tab_5">탭5</li>
+						<li data-tab="tab_6">탭6</li> -->
+					</ul>
+					<!-- <ul class="d_cate_04">
+						<li class="on" data-tab="tab_1">브로슈어</li>
+						<li data-tab="tab_2">정부홍보</li>
+						<li data-tab="tab_3">조세지원</li>
+						<li data-tab="tab_4">정부행사</li>
+					</ul> -->
+				</div>
+
+				<div id="tab_1" class="tab_con on">
+					<div class="pdf_wrap">
+						<div class="pdf-nav">
+							<div><img src="/resources/new/img/tab1_brochure01.jpeg"></div>
+							<div><img src="/resources/new/img/tab1_brochure02.jpeg"></div>
+							<div><img src="/resources/new/img/K-036.png"></div>
+							<div><img src="/resources/new/img/img01.png"></div>
+							<div><img src="/resources/new/img/img01.png"></div>
+							<div><img src="/resources/new/img/img01.png"></div>
+							<div><img src="/resources/new/img/img01.png"></div>
+							<div><img src="/resources/new/img/img01.png"></div>
+						</div>
+
+						<div class="pdf">
+							<div><a href="https://www.kosha.or.kr/kosha/index.do" target="_blank">한국산업안전보건공단(국문)</a>
+								<!-- <img src="/resources/new/img/tab1_brochure01.jpeg"> -->
+								<div id="tab1_brochure01"></div>
+							</div>
+							<div><a href="https://www.kosha.or.kr/kosha/index.do" target="_blank">한국산업안전보건공단(영문)</a><img src="/resources/new/img/tab1_brochure02.jpeg"></div>
+							<div><img src="/resources/new/img/K-036.png">3</div>
+							<div><img src="/resources/new/img/img02.png">4</div>
+							<div><img src="/resources/new/img/img02.png">5</div>
+							<div><img src="/resources/new/img/img02.png">6</div>
+							<div><img src="/resources/new/img/img02.png">7</div>
+							<div><img src="/resources/new/img/img02.png">8</div>
+						</div>
+					</div><!-- video_wrap -->
+				</div>
+
+				<div id="tab_2" class="tab_con">
+					<dl>
+						<dt>
+							GH, 연천BIX 산업용지 18필지 공급 <span></span>
+							<a href="https://gnews.gg.go.kr/briefing/brief_ggi_view.do?BS_CODE=S026&number=1761" target="_blank">뉴스기사 링크</a>
+						</dt>
+						<dd>
+							<div class="">
+								<span class="title">
+									<a href="/resources/new/img/(GH+보도자료)+GH，+연천BIX+산업용지+18필지+공급.hwp" target="_blank"><i class="xi-file-download-o"></i>(GH+보도자료)+GH，연천BIX 산업용지 18필지 공급</a><br>
+									<a href="/resources/new/img/연천BIX조감도.jpg" target="_blank"><i class="xi-file-download-o"></i>연천BIX조감도</a><br>
+									<br />
+									경기도 뉴스포털<br />
+									<img src="/resources/new/img/K-062.png">
+									조감도<br />
+									<img src="/resources/new/img/연천BIX조감도.jpg">
+								</span><br />
+								
+							</div>
+							<table>
+								<tr>
+									<th>경기주택도시공사</th>
+									<td>2021.10.13</td>
+								</tr>
+							</table>
+						</dd>
+						<dt>
+							경기도, 시군과 함께 고위험 사업장 <br>110곳 대상 산재예방 컨설팅 <span></span>
+							<a href="https://gnews.gg.go.kr/briefing/brief_gongbo_view.do?BS_CODE=S017&number=50682" target="_blank">뉴스기사 링크</a>
+						</dt>
+						<dd>
+							<div class="">
+								<span class="title">
+									<a href="/resources/new/img/보도자료+산재예방+컨설팅+지도점검.hwp" target="_blank"><i class="xi-file-download-o"></i>(GH+보도자료)+GH，연천BIX 산업용지 18필지 공급</a><br>
+									<br />
+									경기도 뉴스포털<br />
+									<img src="/resources/new/img/K-063.png">
+								</span><br />
+								
+							</div>
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>2021.10.12</td>
+								</tr>
+							</table>
+						</dd>
+						<dt>
+							근로자 사회보험료 지원 <span></span>
+							<a href="http://insurancesupport.or.kr/durunuri/intro.php" target="_blank">해당지원사업 링크</a>
+						</dt>
+						<dd>
+							<div class="">
+								<span class="title">
+									<a href="/resources/new/img/2021두루누리_리플릿_앞.png" target="_blank"><i class="xi-file-download-o"></i>2021 두루누리 홍보물 디자인_리플릿_앞</a><br>
+									<a href="/resources/new/img/2021두루누리_리플릿_뒤.png" target="_blank"><i class="xi-file-download-o"></i>2021 두루누리 홍보물 디자인_리플릿_뒤</a><br>
+									<br />
+									두루누리 사회보험료지원<br />
+									<img src="/resources/new/img/K-064.png">
+									<img src="/resources/new/img/K-065.png">
+									<img src="/resources/new/img/K-066.png">
+								</span><br />
+								
+							</div>
+							<table>
+								<tr>
+									<th>근로복지공단</th>
+									<td>1588-0075</td>
+								</tr>
+								<tr>
+									<th>국민연금공단</th>
+									<td>(국번없이)1355</td>
+								</tr>
+							</table>
+						</dd>
+						<dt>
+							제조중소기업 혁신바우처사업 <span></span>
+							<a href="http://kosmes.or.kr/sbc/SH/SBI/SHSBI094M0.do" target="_blank">해당지원사업 링크</a>
+						</dt>
+						<dd>
+							<div class="">
+								<span class="title">
+									<a href="/resources/new/img/제조소기업판단기준.pdf" target="_blank"><i class="xi-file-download-o"></i>소기업 판단기준 다운로드</a><br>
+									<br />
+									제조중소기업 혁신바우처사업<br />
+									<img src="/resources/new/img/K-067.png">
+									<img src="/resources/new/img/K-068.png">
+									<img src="/resources/new/img/K-069.png">
+									<img src="/resources/new/img/K-070.png">
+								</span><br />
+								
+							</div>
+							<table>
+								<tr>
+									<th><a href="https://www.mssmiv.com/portal/Main" target="_blank">제조 중소기업 혁신바우처 플랫폼(www.mssmiv.com)</a></th>
+									<td><a href="https://www.mssmiv.com/portal/Main" target="_blank">www.mssmiv.com</a></td>
+								</tr>
+								<tr>
+									<th>문의처</th>
+									<td>제조 중소기업 혁신바우처 플랫폼 > 커뮤니티 > <a href="https://www.mssmiv.com/portal/intro/Contact" target="_blank">문의처</a></td>
+								</tr>
+							</table>
+						</dd>
+
+						<dt>
+							bc_1 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd class="bc_1">
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+
+						<dt>
+							bc_2 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd class="bc_2">
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+
+						<dt>
+							bc_3 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd class="bc_3">
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+
+						<dt>
+							bc_4 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd class="bc_4">
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+
+						<dt>
+							bc_5 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd class="bc_5">
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+				</div><!-- tab_con -->
+
+				<div id="tab_3" class="tab_con">
+					<!-- <dl>
+						<dt>
+							Top메뉴 1-1-1 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd>
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+					</dl> -->
+					<div class="pdf_wrap">
+						<div class="tab3_pdf-nav">
+							<div><img src="/resources/new/img/K-056.png"></div>
+							<div><img src="/resources/new/img/K-048.png"></div>
+							<div><img src="/resources/new/img/K-049.png"></div>
+							<div><img src="/resources/new/img/K-050.png"></div>
+							<div><img src="/resources/new/img/K-051.png"></div>
+							<div><img src="/resources/new/img/K-052.png"></div>
+							<div><img src="/resources/new/img/K-053.png"></div>
+							<div><img src="/resources/new/img/K-054.png"></div>
+						</div>
+
+						<div class="tab3_pdf">
+							<div>
+								<a href="https://www.kbiz.or.kr/ko/index/index.do" target="_blank"><img src="/resources/new/img/K-055.png"></a>
+								<!-- <img src="/resources/new/img/tab3_brochure01.png"> -->
+								<div id="tab3_brochure01"></div>
+							</div>
+							<div><img src="/resources/new/img/K-048.png"></div>
+							<div><img src="/resources/new/img/K-049.png"></div>
+							<div><img src="/resources/new/img/K-050.png"></div>
+							<div><img src="/resources/new/img/K-051.png"></div>
+							<div><img src="/resources/new/img/K-052.png"></div>
+							<div><img src="/resources/new/img/K-053.png"></div>
+							<div><img src="/resources/new/img/K-054.png"></div>
+						</div>
+					</div><!-- video_wrap -->
+				</div><!-- tab_con -->
+
+				<div id="tab_4" class="tab_con">
+					<dl>
+						<dt>
+							Top메뉴 1-1-1 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd>
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+				</div><!-- tab_con -->
+
+				<div id="tab_5" class="tab_con">
+					<dl>
+						<dt>
+							Top메뉴 1-1-1 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd>
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+				</div><!-- tab_con -->
+
+				<div id="tab_6" class="tab_con">
+					<dl>
+						<dt>
+							Top메뉴 1-1-1 <span></span>
+							<a href="#">정부기관 ></a>
+						</dt>
+						<dd>
+							<table>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+								<tr>
+									<th>경기도청</th>
+									<td>036-1234-4567</td>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+				</div><!-- tab_con -->
+
+			</div><!-- depth02_wrap -->
+
+			<div class="map_wrap">
+				<div class="fullscrren">
+					<div id="map" class="map"></div>
+					<div id="popup_nm" class=""></div>
+					<div id="popup" class="ol-popup">
+						<a href="#" id="popup-closer" class="ol-popup-closer"></a>
+						<div id="popup-content"></div>
+						<!-- Content of the menu -->
+						<div id="menu">
+							<div class="">
+								<table class="table-responsive">
+									<thead></thead>
+									<tbody>
+										<tr>
+											<td>
+												<!--v월드 레이어 리스트-->
+												<div class="container-fluid scroll on">
+													<button type="button" class="btn btn-seungjang control_btn swipeBtn"
+														onclick="modeSW(this)"><span class='tool_name'>SWIPE</span></button>
+													<div id="readExcel_div1" class="btn btn-seungjang">
+														<span onclick="document.getElementById('file_1').click();">지번주소</span>
+														<input type="file" id="file_1" style="width: 70px; display: none;"
+															onchange="readExcel('parcel')">
+													</div>
+													<div id="readExcel_div2" class="btn btn-seungjang">
+														<span onclick="document.getElementById('file_2').click();">도로명주소</span>
+														<input type="file" id="file_2" style="width: 70px; display: none;"
+															onchange="readExcel('road')">
+													</div>
+													<div id="info" class="btn btn-seungjang"><i class="fas fa-search-location"></i>줌상태 0
+													</div>
+													<div id="srch_ind_code_result" class="btn btn-seungjang"><i class="fas fa-industry"></i>
+													</div>
+													<div id="mouseCoordinate_Center" class="btn btn-seungjang" style="display: block;">중심좌표
+													</div>
+													<div id="mouseCoordinate" class="btn btn-seungjang" style="display: block;">좌표</div>
+													<div>
+														Operation:
+														<select id="operation" onchange="setOperation(this.value);">
+															<option value="normal">normal</option>
+															<option value="multiply">multiply</option>
+															<option value="screen">screen</option>
+															<option value="overlay">overlay</option>
+															<option value="darken">darken</option>
+															<option value="lighten">lighten</option>
+															<option value="color-dodge">color-dodge</option>
+															<option value="color-burn">color-burn</option>
+															<option value="hard-light">hard-light</option>
+															<option value="soft-light">soft-light</option>
+															<option value="difference">difference</option>
+															<option value="exclusion">exclusion</option>
+															<option value="hue">hue</option>
+															<option value="saturation">saturation</option>
+															<option value="color">color</option>
+															<option value="luminosity">luminosity</option>
+														</select>
+													</div>
+													<div id='vLayerList' class=""></div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="data"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="col">
+					
+								</div>
+								<div class="col">
+					
+								</div>
+								<div class="col">
+					
+								</div>
+							</div>
+						</div>
+						<div id="menu2">
+							<h1>레이어정보표출</h1>
+							<p style="border-bottom:1px solid #999;">
+							  <!-- <i>--</i> -->
+							  </p><div id="wms_image" class="" style="width: 100%;height: 300px;overflow-x: hidden;overflow-y: auto;text-align: left;"></div>
+							  <div id="wfs_result" class="" style="width: 100%;height: 200px;overflow-x: hidden;overflow-y: auto;text-align: left;"></div>
+							  <div id="dist_info" style="width: 100%;height: 300px;overflow-x: hidden;overflow-y: auto;text-align: left;"></div>
+							
+							<p></p>
+						</div>
+						<div id="menu3">
+							<h1>Menu3</h1>
+							<p style="border-bottom:1px solid #999;">
+								<i>산업단지</i>
+							</p>
+							<!-- <div class="container-fluid"></div> -->
+							<div class="container-fluid">
+								<div class="navbar-brand" style="font-size: 13px;">
+									<div class="nav-wrapper position-relative end-0">
+										<nav style="height: 30px;">
+											<ul class="nav nav-pills nav-fill p-1" role="tablist">
+					
+												<li class="nav-item">
+													<a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#tab-1" role="tab"
+														aria-controls="preview" aria-selected="true" data-tab="tab-1">
+														업종별가능여부
+													</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-2" role="tab"
+														aria-controls="code" aria-selected="false" data-tab="tab-2">
+														관리기본계획
+													</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-3" role="tab"
+														aria-controls="code" aria-selected="false" data-tab="tab-3">
+														산업단지소식(개발중)
+													</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-4" role="tab"
+														aria-controls="code" aria-selected="false" data-tab="tab-4">
+														지자체혜택(개발중)
+													</a>
+												</li>
+					
+											</ul>
+										</nav>
+									</div>
+								</div>
+					
+								<div id="tab-1" class="tab-content height_100 current ">
+									<!--탭1-->
+									<div id="danji_info"></div>
+								</div>
+								<div id="tab-2" class="tab-content height_100">
+									<!--탭2-->
+									<!-- <div id="myPdf" style="height: 758px;"></div> -->
+								</div>
+								<div id="tab-3" class="tab-content height_100">
+									<!--탭3-->
+					
+								</div>
+								<div id="tab-4" class="tab-content height_100">
+									<!--탭4-->
+					
+								</div>
+					
+							</div> <!-- 끝 -->
+						</div>
+						<div id="menu4">
+							<h1>Menu4</h1>
+							<p style="border-bottom:1px solid #999;">
+								<i>기반시설</i>
+							</p>
+						</div>
+						<div id="menu5">
+							<h1>Menu5</h1>
+							<p style="border-bottom:1px solid #999;">
+								<i>제조현황</i>
+							</p>
+						</div>
+						<div id="menu6">
+							<h1>Menu6</h1>
+							<p style="border-bottom:1px solid #999;">
+								<i>미정입니다.</i>
+							</p>
+						</div>
+					</div>
+				</div><!-- fullscrren -->
+			</div><!-- map_wrap -->
+
+		</div><!-- body -->
+	</div><!-- wrap -->
+	<div style="display: none;">
+		<label>
+			<input type="checkbox" style="display: none;" id="rotateWithView">
+		</label>
+		<form id="wfsForm">
+			<input type="hidden" name="key" value="C4C4FE9D-271A-3D7D-9DBE-BF7030912E04">
+			<!-- <input type="hidden" name="domain" value="http://seongjang.com">-->
+			<input type="hidden" name="SERVICE" value="WFS">
+			<input type="hidden" name="version" value="1.1.0">
+			<input type="hidden" name="request" value="GetFeature">
+			<input type="hidden" name="TYPENAME" value="">
+			<input type="hidden" name="OUTPUT" value="text/javascript">
+			<input type="hidden" name="SRSNAME" value="EPSG:3857">
+			<input type="hidden" name="BBOX" value="">
+		</form>
+		<input type="hidden" name="SGIS_AccessToken" value="">
+		<input type="hidden" name="road_address" value="">
+		<input type="hidden" name="bunji_address" value="">
+    <input type="hidden" name="sido_nm" value="">
+	</div>
+
+
+	<script type="text/javascript">
+		$('.video').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.video-nav'
+		});
+		$('.video-nav').slick({
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			centerPadding: '10px',
+			asNavFor: '.video',
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true
+		});
+		$('.pdf').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.pdf-nav'
+		});
+		$('.pdf-nav').slick({
+			slidesToShow: 7,
+			slidesToScroll: 1,
+			centerPadding: '10px',
+			asNavFor: '.pdf',
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true
+		});
+		$('.tab3_pdf').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.tab3_pdf-nav'
+		});
+		$('.tab3_pdf-nav').slick({
+			slidesToShow: 7,
+			slidesToScroll: 1,
+			centerPadding: '10px',
+			asNavFor: '.tab3_pdf',
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true
+		});
+	</script>
+		<!--OpenLayers 6.5 -->
+		<script src="/resources/js/proj4-src.js"></script>
+		<script src="/resources/js/ol.js"></script>
+		<!-- <script src="https://cdn.osmbuildings.org/4.0.7/OSMBuildings.js"></script> -->
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<!-- ol-ext -->
+		<script src="/resources/js/ol-ext.js"></script>  
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>  
+		<!-- Grid Map JS-->
+		<script src="/resources/js/sjmap/sjmap_new.js"></script>
+		<script src="/resources/js/layer.js"></script>
+		<!--Font-->
+		<script src="/resources/js/extra/FontAwesomeDef.js"></script>
+		<script src="/resources/js/extra/FontMaki2Def.js"></script>
+		<script src="/resources/js/extra/FontMakiDef.js"></script>
+		<script src="https://kit.fontawesome.com/50ae7c5ddb.js" crossorigin="anonymous"></script>
+		<!--utility-->
+		<script src="/resources/js/jspdf.umd.min.js"></script>
+		<script src="/resources/js/pdfobject.js"></script>
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+
+</html>

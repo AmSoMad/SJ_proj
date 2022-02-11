@@ -1,0 +1,139 @@
+<div class="">
+	<div class="table-responsive">
+		<table class="table table-dark table-hover" style="	background-color: #252f40;">
+			<thead>
+				<th colspan="4" class="">건축물대장 - 표제부</th>
+			</thead>
+			<tbody>
+			<tr>
+			    <td class="mb-0 text-xs">대지위치</td>
+			    <td colspan="3" class="text-xs text-secondary mb-0" th:text="${general_info.platPlc}"></td>
+			</tr>
+			<tr>				
+				<td class="mb-0 text-xs">번</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.bun}"></td>
+			    <td class="mb-0 text-xs">지</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.ji}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">블록</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.block}"></td>
+				<td class="mb-0 text-xs">로트</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.lot}"></td>
+			</tr>
+			<tr>	
+			    <td class="mb-0 text-xs">내진능력</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.rserthqkAblty}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">대지면적</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.platArea}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">건축면적</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.archArea}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">건폐율</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.bcRat}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">연면적</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.totArea}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">용적률산정연면적</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.vlRatEstmTotArea}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">용적률</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.vlRat}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">구조코드명</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.strctCdNm}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">기타구조</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.etcStrct}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">주용도코드명</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.mainPurpsCdNm}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">기타용도</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.etcPurps}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">기타지붕</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.etcRoof}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">높이</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.heit}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">지상층수</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.grndFlrCnt}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">지하층수</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.ugrndFlrCnt}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">부속건축물수</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.atchBldCnt}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">부속건축물면적</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.atchBldArea}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">총동연면적</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.totDongTotArea}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">허가일</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.pmsDay}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">착공일</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.stcnsDay}"></td>
+			</tr>
+			<!-- <tr>
+			    <td class="mb-0 text-xs">사용승인일</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.useAprDay}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">에너지효율등급</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.engrGrade}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">에너지절감율</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.engrRat}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">친환경건축물등급</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.gnBldGrade}"></td>
+			    <td class="mb-0 text-xs">친환경건축물인증점수</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.gnBldCert}"></td>
+			    <td class="mb-0 text-xs">지능형건축물등급</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.itgBldGrade}"></td>
+			  </tr>
+			  <tr>
+			    <td class="mb-0 text-xs">지능형건축물인증점수</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.itgBldCert}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">생성일자</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.crtnDay}"></td>
+			</tr>
+			<tr>
+			    <td class="mb-0 text-xs">내진설계적용여부</td>
+			    <td class="text-xs text-secondary mb-0" th:text="${general_info.rserthqkDsgnApplyYn}"></td>
+			</tr> -->
+			</tbody>
+		</table>
+	</div>
+</div>

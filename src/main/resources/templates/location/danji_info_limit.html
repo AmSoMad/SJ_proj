@@ -1,0 +1,141 @@
+	<div class="">
+		<table class="table table-dark table-hover">
+			<thead>
+				<th id="danji_head" colspan="10" class="" th:text="${danji.danji_code} + ' : ' + ${danji.danji_full_nm}"></th>
+				
+			</thead>
+			<tbody>
+			  <tr>
+			    <td class="mb-0 text-xs" rowspan="11">가능한<br> 제조업</td>
+			    <td class="text-xs text-secondary mb-0">C10</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c10 != 0}" th:text="${danji.c10}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c10 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C21</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c21 != 0}" th:text="${danji.c21}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c21 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C32</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c32 != 0}" th:text="${danji.c32}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c32 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C11</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c11 != 0}" th:text="${danji.c11}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c11 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C22</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c22 != 0}" th:text="${danji.c22}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c22 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C33</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c33 != 0}" th:text="${danji.c33}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c33 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C12</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c12 != 0}" th:text="${danji.c12}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c12 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C23</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c23 != 0}" th:text="${danji.c23}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c23 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C34</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c34 != 0}" th:text="${danji.c34}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c34 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C13</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c13 != 0}" th:text="${danji.c13}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c13 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C24</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c24 != 0}" th:text="${danji.c24}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c24 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">E38</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.E38 != 0}" th:text="${danji.E38}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.E38 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C14</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c14 != 0}" th:text="${danji.c14}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c14 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C25</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c25 != 0}" th:text="${danji.c25}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c25 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">H49</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.H49 != 0}" th:text="${danji.H49}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.H49 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C15</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c15 != 0}" th:text="${danji.c15}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c15 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C26</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c26 != 0}" th:text="${danji.c26}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c26 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">H52</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.H52 != 0}" th:text="${danji.H52}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.H52 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C16</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c16 != 0}" th:text="${danji.c16}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c16 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C27</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c27 != 0}" th:text="${danji.c27}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c27 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">M70</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.m70 != 0}" th:text="${danji.m70}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.m70 != 0}" th:text="'불가'"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C17</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c17 != 0}" th:text="${danji.c17}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c17 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C28</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c28 != 0}" th:text="${danji.c28}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c28 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C18</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c18 != 0}" th:text="${danji.c18}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c18 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C29</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c29 != 0}" th:text="${danji.c29}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c29 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C19</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c19 != 0}" th:text="${danji.c19}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c19 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C30</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c30 != 0}" th:text="${danji.c30}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c30 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			  </tr>
+			  <tr>
+			    <td class="text-xs text-secondary mb-0">C20</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c20 != 0}" th:text="${danji.c20}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c20 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0">C31</td>
+			    <td class="text-xs text-secondary mb-0" th:if="${danji.c31 != 0}" th:text="${danji.c31}"></td>
+			    <td class="text-xs text-secondary mb-0" th:unless="${danji.c31 != 0}" th:text="'불가'"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			    <td class="text-xs text-secondary mb-0"></td>
+			  </tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<table class="table-dark table-hover">
+			<thead>
+				<th id="danji_limited" class="mb-0 text-xs" rowspan="11">제한사항</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="text-xs text-secondary mb-0" th:if="${danji.common_limit != null}" th:text="${danji.common_limit}"></td>
+					<td class="text-xs text-secondary mb-0" th:unless="${danji.common_limit != null}" th:text="'검토요망'"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>

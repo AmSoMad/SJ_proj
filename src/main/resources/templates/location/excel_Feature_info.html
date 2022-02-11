@@ -1,0 +1,35 @@
+<ul class="depth1">
+    <li>
+        <div class="tit">
+            <button class="clear on">
+                <h3>개별업로드 자료<img src="/resources/images/main/arrow_icon.jpg" width="10" height="6" border="0" alt="" /></h3>
+                <p>시설정보</p>
+            </button>
+        </div>
+
+        <div class="txt" style="display: block;">
+            <ul class="depth2">
+                <li class="clear">
+                    <h4>업로드 자료형태</h4>
+                    <p th:text="${data.input_type}"></p>
+                </li>
+                <li class="clear">
+                    <h4>시설명</h4>
+                    <p th:text="${data.nm}"></p>
+                </li>
+                <li class="clear">
+                    <h4>주소</h4>
+                    <p th:text="${data.addr}"></p>
+                </li>
+                <li class="clear">
+                    <h4>주요정보</h4>
+                    <p th:text="${data.im_info}"></p>
+                </li>
+                <li class="clear">
+                    <h4>연락처</h4>
+                    <p th:text="${data.tel}"></p>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>

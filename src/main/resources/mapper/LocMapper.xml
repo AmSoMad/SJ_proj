@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seongjang.factory.location.repository.LocMapper">
+
+
+	<select id="Supply_Companies" resultType="Supply_Companies">
+		SELECT sca."no" , sca.기업명 AS company_nm, sca.전화번호 AS c_number, sca.loc_x ,sca.loc_y  FROM factory.supply_companies_addr sca ;
+	</select>
+	<select id="supply_companies_info" resultType="col_dto">
+		SELECT sc."no" ,
+		sc."기업명" AS col2,
+		sc."주력분야" AS col3,
+		sc."전문/특화 업종" AS col4,
+		sc."보유인력_sw" AS col5,
+		sc."보유인력_엔지니어링" AS col6,
+		sc."구축실적_정부" AS col7,
+		sc."구축실적_민간" AS col8,
+		sc."컨소시엄정보" AS col9,
+		sc."주소"  AS col10,
+		sc."대표자" AS col11,
+		sc."전화번호" AS col12
+		FROM factory.supply_companies sc WHERE sc."no" = #{no};
+	</select>
+	
+	<select id="v_layerList" resultType="java.util.ArrayList">
+		select * from v_layer where del_Yn='N';
+	</select>	
+
+	<select id="totalCount" resultType="Integer">
+	select count(*) from v_layer where del_Yn = 'N';
+	</select>
+	
+	<!-- <select id="fac_Search" parameterType="HomeForm" resultType="Fac_List">
+	SELECT fl.﻿comp_nm , fl.ind_nm, fl.ind_code, fl.loc_x, fl.loc_y FROM factory.fac_list fl WHERE ind_code LIKE '%'||#{ind_code}||'%' AND loc_x != '0';
+	</select> -->
+	<select id="fac_info" parameterType="Fac_List" resultType="col_dto">
+		select r.시도명	col1,
+			r.시군구명	 col2,
+			r.관리기관	 col3,
+			r.회사명	col4,
+			r.공장구분	 col5,
+			r.단지명	col6,
+			r.설립구분	 col7,
+			r.입주형태	 col8,
+			r.보유구분 	col9,
+			r.최초승인일	col10,
+			r.최초등록일	col11,
+			r.등록구분	col12,
+			r.등록일	col13,
+			r.전화번호	col14,
+			r.남자종업원	col15,
+			r.여자종업원	col16,
+			r.외국인남자종업원	col17,
+			r.외국인여자종업원	col18,
+			r.종업원합계	col19,
+			r.생산품	col20,
+			r.원자재	col21,
+			r.공장규모	 col22,
+			r.용도지역	 col23,
+			r.지목	col24,
+			r.용지면적	 col25,
+			r.제조시설면적	col26,
+			r.부대시설면적	col27,
+			r.건축면적	 col28,
+			r.지식산업센터명	col29,
+			r.대표업종	col30,
+			r.업종명	col31,
+			r.업종코드	col32,
+			r.차수	col33,
+			r.법인주소	col34,
+			r.필지수	col35,
+			r.공장주소 	col36,
+			r.공장주소_지번	col37,
+			r.공장관리번호	col38
+			from factory.reg_fac_info r where r."공장관리번호" = #{fac_no};
+	</select>
+	
+	
+	<select id="fac_Search" parameterType="HomeForm" resultType="Fac_List">
+	<!--,SELECT fl."comp_nm",
+		fl.ind_nm,
+		fl.ind_code,
+		fl.fac_no,
+		fl.loc_x,
+		fl.loc_y,
+		fl.fac_addr
+		 g.platPlc,
+		g.bun,
+		g.ji,
+		g.block,
+		g.lot,
+		g.naMainBun,
+		g.naSubBun,
+		g.platArea,
+		g.archArea,
+		g.bcRat,
+		g.totArea,
+		g.vlRatEstmTotArea,
+		g.vlRat,
+		g.strctCd,
+		g.strctCdNm,
+		g.etcStrct,
+		g.mainPurpsCd,
+		g.mainPurpsCdNm,
+		g.etcPurps,
+		g.roofCd,
+		g.roofCdNm,
+		g.etcRoof,
+		g.heit,
+		g.grndFlrCnt,
+		g.ugrndFlrCnt,
+		g.atchBldCnt,
+		g.atchBldArea,
+		g.totDongTotArea,
+		g.pmsDay,
+		g.stcnsDay,
+		g.useAprDay,
+		g.engrGrade,
+		g.engrRat,
+		g.gnBldGrade,
+		g.gnBldCert,
+		g.itgBldGrade,
+		g.itgBldCert,
+		g.crtnDay,
+		g.rserthqkDsgnApplyYn,
+		g.rserthqkAblty -->
+<!--	FROM  factory.general_factory g, factory.fac_list as fl 
+	WHERE -->
+	<!-- g.platplc = fl.fac_addr  -->
+	<!--fl.loc_y != '0'
+ 	<if test='ind_code != null and ind_code != "" and ind_code gt 10000 '>
+	AND fl.ind_code LIKE '%'||#{ind_code}||'%'
+	</if>
+	<if test='ind_code != null and ind_code != "" and 10000 gt ind_code and ind_code gt 999'>
+	AND fl.ind_code ~ CAST(#{ind_code}||'[0-9]{1}' as TEXT)
+	</if>
+	<if test='ind_code != null and ind_code != "" and 1000 gt ind_code and ind_code gt 99'>
+	AND fl.ind_code ~ CAST(#{ind_code}||'[0-9]{2}' as TEXT)
+	</if>
+	<if test='ind_code != null and ind_code != "" and 100 gt ind_code and ind_code gt 9'>
+	AND fl.ind_code ~ CAST(#{ind_code}||'[0-9]{3}' as TEXT)
+	</if>-->
+	
+	SELECT fln.comp_nm,
+		fln.ind_nm,
+		fln.ind_code,
+		fln.fac_no,
+		fln.loc_x,
+		fln.loc_y,
+		fln.fac_addr
+	FROM factory.fac_list_new fln WHERE fln.loc_y != '0'
+	<if test='fac_addr != null and fac_addr != ""'>
+	AND fln.fac_addr LIKE '%'||#{fac_addr}||'%'
+	</if> 
+	AND SUBSTRING(fln.ind_code,0,21) LIKE '%'||#{ind_code}||'%'
+	 
+	AND fln.loc_x != '#N/A' ORDER BY comp_nm DESC;
+	</select>
+	
+	<select id="reg_fac_list_sandan" parameterType="HomeForm" resultType="Fac_List">
+
+	
+	SELECT fln.comp_nm,
+		fln.ind_nm,
+		fln.ind_code,
+		fln.fac_no,
+		fln.loc_x,
+		fln.loc_y,
+		fln.fac_addr 
+	FROM factory.reg_fac_info_event rfie LEFT JOIN factory.fac_list_new fln ON rfie.공장관리번호  = fln.fac_no 
+	WHERE 
+	<if test="ind_code == 1">
+	rfie.단지명 != ' '
+		AND 
+	</if> 
+	<if test="ind_code == 2">
+	rfie.단지명 = ' '
+		AND 
+	</if>
+
+	fln.loc_x != '#N/A';
+	</select>
+	
+	<select id="ksic_Search" parameterType="KsicCode" resultType="KsicCode">
+	SELECT * 
+	FROM factory.ksic_code kc 
+	WHERE kc.ksic_no LIKE #{ksic_no}||'%';
+	
+	</select>
+	
+	<select id="ksic_Search_keyword" parameterType="KsicCode" resultType="KsicCode">
+	SELECT * FROM factory.ksic_code kc WHERE kc.ksic_kw LIKE '%'||#{ksic_kw}||'%' OR kc.ksic_nm LIKE '%'||#{ksic_kw}||'%';
+	
+	</select>
+	
+	<select id="general_title_Search" parameterType="General_Title_Factory_Info" resultType="General_Title_Factory_Info">
+	SELECT 
+		g.*
+		FROM factory.general_title_factory g WHERE g.platplc = #{platPlc}; 
+	</select>
+	
+	<select id="danji_Limit" parameterType="Danji_Info" resultType="Danji_Limit">
+	SELECT * FROM factory.danji_limit dl WHERE dl.danji_code = #{danji_code};
+	
+	</select>
+	
+	<select id="building_info" parameterType="General_Factory_Info" resultType="General_Factory_Info">
+ 			<if test='newPlatPlc != null and newPlatPlc != ""'>
+		 	SELECT 
+		 		* 
+		 		FROM factory."general" g 
+		 		WHERE
+			g.newplatplc like '%'||#{newPlatPlc};
+			</if> 	
+ 	
+ 	<!-- WHERE gf.mgmbldrgstpk LIKE '%-'||#{mgmBldrgstPk} AND gf.sigungucd = #{sigunguCd}; -->
+	</select>
+	
+	
+	
+	<select id="swgtr_fclty" resultType="Swgtr_Fclty">
+	SELECT * FROM factory.swgtr_fclty_addr sfa WHERE sfa.loc_x != '에러발생';
+	</select>
+	
+	<select id="swgtr_fclty_info" parameterType="Swgtr_Fclty" resultType="col_dto">
+	SELECT DISTINCT
+		sf."시도" as col1,
+		sf."시군구" as col2,
+		sf."시설명(500톤/일이상/미만)" as col3,
+		sf."소재지" as col4,
+		sf."시설용량(톤/일)" as col5,
+		sf."시설_물리적(톤/일)" as col6,
+		sf."시설_생물학적톤/일)" as col7,
+		sf."시설_고도(톤/일)" as col8,
+		sf."유입하수량(톤/일)" as col9,
+		sf."유입_물리적(톤/일)" as col10,
+		sf."유입_생물학적(톤/일)" as col11,
+		sf."유입_고도(톤/일)" as col12,
+		sf."방류량(톤/일)" as col13,
+		sf."방류_물리적(톤/일)" as col14,
+		sf."방류_생물학적(톤/일)" as col15,
+		sf."방류_고도(톤일)" as col16,
+		sf."유입bod" as col17,
+		sf."방류bod" as col18,
+		sf."유입cod" as col19,
+		sf."방류cod" as col20,
+		sf."유입ss" as col21,
+		sf."방류ss" as col22,
+		sf."유입T-N" as col23,
+		sf."방류T-N" as col24,
+		sf."유입T-P" as col25,
+		sf."방류T-P" as col26,
+		sf."유입총대장균군수" as col27,
+		sf."방류총대장균군수" as col28,
+		sf."처리효율" as col29,
+		sf."처리부하량(㎏BOD/D)" as col30,
+		sf."처리방법" as col31,
+		sf."적용신기술" as col32,
+		sf."연계처리량(톤/일)_분뇨" as col33,
+		sf."연계처리량(톤/일)_축산" as col34,
+		sf."연계처리량(톤/일)_침출수" as col35,
+		sf."연계처리량(톤/일)_기타" as col36,
+		sf."전화번호" as col37,
+		sf."준공일" as col38,
+		sf."가동개시일" as col39,
+		sf."사업비(백만원)" as col40,
+		sf."방류수소독방법" as col41,
+		sf."방류수역_수계" as col42,
+		sf."방류수역_지류" as col43,
+		sf."방류수역_세부단위구역" as col44,
+		sf."방류수역_지역구분" as col45,
+		sf."방류수역_중권역_명칭" as col46,
+		sf."방류수역_중권역_목표수질(BOD)" as col47,
+		sf."재생에너지이용률(%)" as col48,
+		sf."연간 총 전력사용량(㎾h/년)" as col49,
+		sf."하수처리량당CO2배출량(㎏CO2/㎥)" as col50,
+		sf."운영주체(자체/공기업/민간대행)" as col51,
+		sf."위탁업체명" as col52,
+		sf."위탁비용(백만원/년)" as col53,
+		sf."위탁 계약기간(시작)" as col54,
+		sf."위탁 계약기간(완료)" as col55,
+		sf."중심처리시설" as col56,
+		sf."직원총수(명)" as col57,
+		sf."안전사고건수(건/인/년)" as col58
+		FROM factory.swgtr_fclty sf,factory.swgtr_fclty_addr sfa WHERE sf.소재지 = sfa.addr AND sfa.loc_x != '에러발생' AND sf.no = #{no};
+	</select>
+	
+	<select id="waste_fclty" parameterType="Waste_Fclty" resultType="Waste_Fclty">
+	SELECT * FROM factory.waste_facilities_addr wfa WHERE wfa.category = #{category};
+	</select>
+	
+	<select id="waste_fclty_sandan" parameterType="Waste_Fclty" resultType="Waste_Fclty">
+	SELECT DISTINCT wfa.* FROM factory.waste_facilities_addr wfa ,industry.dam_dan dd WHERE ST_Contains(dd.geom ,(ST_GeomFromText('POINT('||wfa.loc_x||'     '||wfa.loc_y ||')',3857))) AND wfa.category = #{category};
+	</select>
+	
+	<select id="waste_fclty_info" parameterType="Waste_Fclty" resultType="col_dto">
+	SELECT waste."no" AS col1,
+	waste."category" AS col2,
+	waste."폐기물종류" AS col3,
+	waste."폐기물코드" AS col4,
+	waste."업체명" AS col5,
+	waste."재활용업_등록형태" AS col6,
+	waste."대표자" AS col7,
+	waste."주소" AS col8,
+	waste."전화번호" AS col9,
+	waste."종업원수" AS col10,
+	waste."재생제품" AS col1,
+	waste."처리방법" AS col12 
+	FROM (SELECT * FROM factory.waste_designated_disposal_facilities wddf
+	UNION 
+	SELECT * FROM factory.waste_disposal_facilities wdf ) AS waste WHERE waste."no" = #{no};	
+	</select>
+	
+	
+	<select id="dist_Info" parameterType="Dist_Location" resultType="Dist_Info">
+	<!-- select gid, a0, a1, a2, a3, geom from ( -->
+	select DISTINCT resultData.* from (
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d011_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d012_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d014_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d015_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d017_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d019_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d020_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d022_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d023_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d024_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d025_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d026_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d027_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d028_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d029_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d030_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d031_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d032_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d033_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d034_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d035_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d036_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d037_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d038_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d039_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d040_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d041_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d042_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d043_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d047_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d048_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d049_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d050_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d052_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d053_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d054_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d055_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d056_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d057_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d058_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d060_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d062_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d063_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d064_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d065_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d066_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d067_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d068_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d069_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d071_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d072_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d075_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d076_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d079_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d080_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d081_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d082_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d083_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d088_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d089_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d090_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d093_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d094_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d095_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d096_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d097_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d098_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d099_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d101_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d102_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d103_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d104_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d105_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d106_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d107_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d108_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d109_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d110_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d111_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d112_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d113_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d114_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d115_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d116_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d117_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d118_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d120_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d121_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d124_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d125_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d126_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d127_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d128_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d129_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d130_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d131_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d132_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d133_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d134_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d136_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d137_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d138_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d139_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d140_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d141_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d142_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d143_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d144_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d145_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d146_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d147_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d148_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d149_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d301_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d302_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d303_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d304_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d305_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d306_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d307_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d308_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d309_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d310_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d311_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d312_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d313_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d314_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d315_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d316_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d317_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d318_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d319_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d320_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d321_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d322_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d323_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d324_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d325_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d326_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d327_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d328_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d329_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d330_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d331_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d332_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d333_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d334_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d335_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d336_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d337_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d338_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d339_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d340_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d341_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d342_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d343_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d344_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d345_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d346_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)) UNION 
+		SELECT DISTINCT gid,	a0,	a1,	a2,	TO_CHAR(a3, 'YYYY-MM-DD') as a3, ST_transform(geom ,3857)FROM z_shp.al_00_d347_20210614 ad WHERE ST_Intersects(ad.geom , ST_GeomFromText('POINT('||#{loc_x}||'     '||#{loc_y}||')' , 5174)))
+		 as resultData ;
+	<!-- 	) order by a3; -->
+	</select>	
+	
+	
+</mapper>

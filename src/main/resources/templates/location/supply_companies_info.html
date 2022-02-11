@@ -1,0 +1,74 @@
+<ul class="depth1">
+    <li>
+        <div class="tit">
+            <button class="clear on">
+                <h3>스마트공장 공급기업<img src="/resources/images/main/arrow_icon.jpg" width="10" height="6" border="0" alt="" /></h3>
+                <p th:text="공급기업정보"></p>
+                <input type="text" th:value="${data.col1}" style="display: none;">
+            </button>
+        </div>
+
+        <div class="txt" style="display: block;">
+            <ul class="depth2">
+                <li class="clear">
+                    <h4>기업명</h4>
+                    <p th:text="${data.col2}"></p>
+                </li>
+                <li class="clear">
+                    <h4>주력분야</h4>
+                    <p th:text="${data.col3}"></p>
+                </li>
+                <li class="clear">
+                    <h4>보유인력 / SW</h4>
+                    <p th:text="${data.col5}"></p>
+                </li>
+                <li class="clear">
+                    <h4>보유인력 / 엔지니어링</h4>
+                    <p th:text="${data.col6}"></p>
+                </li>
+                <li class="clear">
+                    <h4>구축실적 / 정부기관</h4>
+                    <p th:text="${data.col7}"></p>
+                </li>
+                <li class="clear">
+                    <h4>구축실적 / 민간기관</h4>
+                    <p th:text="${data.col8}"></p>
+                </li>
+                <li class="clear">
+                    <h4>컨소시엄정보</h4>
+                    <p th:text="${data.col9}"></p>
+                </li>
+                <li class="clear" style="height: 100%;">
+                    <h4>주소</h4>
+                    <p th:text="${data.col10}"></p>
+                </li>
+                <li class="clear">
+                    <h4>대표</h4>
+                    <p th:text="${data.col11}"></p>
+                </li>
+                <li class="clear">
+                    <h4>전화번호</h4>
+                    <p th:text="${data.col12}"></p>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+    <li>
+        <div class="tit">
+            <button class="clear on">
+                <h3>전문 / 특화업종<img src="/resources/images/main/arrow_icon.jpg" width="10" height="6" border="0" alt="" /></h3>
+                <p th:text="전문업종"></p>
+            </button>
+        </div>
+
+        <div class="txt" style="display: block;">
+            <ul class="depth2">
+                 <li class="clear" style="height: 100%;">
+                    <h4>전문/특화 업종</h4>
+                    <p th:text="${data.col4}"></p>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<StyledLayerDescriptor version="1.0.0" 
+xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+xmlns="http://www.opengis.net/sld" 
+xmlns:ogc="http://www.opengis.net/ogc" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:se="http://www.opengis.net/se">
+
+  <NamedLayer>
+    <se:Name>factory</se:Name>
+    <UserStyle>
+	  <se:Name>factory</se:Name>
+      <Title>Red Line</Title>
+      <Abstract>Light red line, 2px wide</Abstract>
+      <FeatureTypeStyle>
+ 		<Rule><!--공장-->
+            <Title>etc_17000</Title>
+            <ogc:Filter>
+              <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>A8</ogc:PropertyName>
+                <ogc:Literal>17000</ogc:Literal>
+              </ogc:PropertyIsEqualTo>
+            </ogc:Filter>
+              <PolygonSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">#000000</CssParameter>
+                  <CssParameter name="stroke-width">0.5</CssParameter>
+                  </Stroke>
+              </PolygonSymbolizer>
+              <LineSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">
+                      <ogc:Literal>#0000FF</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="stroke-width">
+                      <ogc:Literal>2</ogc:Literal>
+                  </CssParameter>
+                  </Stroke>
+                  <Fill>
+                  <CssParameter name="Fill">
+                      <ogc:Literal>#0000FF</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="Fill-width">
+                      <ogc:Literal>0.5</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="fill-opacity">
+                      <ogc:Literal>0.5</ogc:Literal>
+                      </CssParameter>                
+                  </Fill>            
+              </LineSymbolizer>
+              <TextSymbolizer>
+                  <Label>
+                      <ogc:PropertyName>A9</ogc:PropertyName>
+                  </Label>
+                  <Font>
+                  <CssParameter name="font-family">휴먼편지체</CssParameter>               
+                  <CssParameter name="font-size">13</CssParameter>
+                  <CssParameter name="font-style">normal</CssParameter>
+                  <CssParameter name="font-weight">normal</CssParameter>
+                  </Font>
+                  <LabelPlacement>
+                  <PointPlacement>
+                      <AnchorPoint>
+                      <AnchorPointX>0.5</AnchorPointX>
+                      <AnchorPointY>0.5</AnchorPointY>
+                      </AnchorPoint>
+                  </PointPlacement>
+                  </LabelPlacement>
+                  <Halo>
+                  <Radius>3</Radius>
+                  <Fill>
+                      <CssParameter name="fill">#0000FF</CssParameter>
+                  </Fill>
+                  </Halo>         
+                  <VendorOption name="autoWrap">60</VendorOption>
+                  <VendorOption name="maxDisplacement">90</VendorOption>
+              </TextSymbolizer>
+        </Rule>      
+		<Rule><!--창고-->
+            <Title>etc_18000</Title>
+            <ogc:Filter>
+              <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>A8</ogc:PropertyName>
+                <ogc:Literal>18000</ogc:Literal>
+              </ogc:PropertyIsEqualTo>
+            </ogc:Filter>
+              <PolygonSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">#000000</CssParameter>
+                  <CssParameter name="stroke-width">0.5</CssParameter>
+                  </Stroke>
+              </PolygonSymbolizer>
+              <LineSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">
+                      <ogc:Literal>#00003c</ogc:Literal><!--테두리-->
+                  </CssParameter>
+                  <CssParameter name="stroke-width">
+                      <ogc:Literal>2</ogc:Literal>
+                  </CssParameter>
+                  </Stroke>
+                  <Fill>
+                  <CssParameter name="Fill">
+                      <ogc:Literal>#00003c</ogc:Literal><!--채우기-->
+                  </CssParameter>
+                  <CssParameter name="Fill-width">
+                      <ogc:Literal>0.5</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="fill-opacity">
+                      <ogc:Literal>0.5</ogc:Literal>
+                      </CssParameter>                
+                  </Fill>            
+              </LineSymbolizer>
+              <TextSymbolizer>
+                  <Label>
+                      <ogc:PropertyName>A9</ogc:PropertyName><!--글자출력값-->
+                  </Label>
+                  <Font>
+                  <CssParameter name="font-family">휴먼편지체</CssParameter>               
+                  <CssParameter name="font-size">13</CssParameter>
+                  <CssParameter name="font-style">normal</CssParameter>
+                  <CssParameter name="font-weight">normal</CssParameter>
+                  </Font>
+                  <LabelPlacement>
+                  <PointPlacement>
+                      <AnchorPoint>
+                      <AnchorPointX>0.5</AnchorPointX>
+                      <AnchorPointY>0.5</AnchorPointY>
+                      </AnchorPoint>
+                  </PointPlacement>
+                  </LabelPlacement>
+                  <Halo>
+                  <Radius>3</Radius>
+                  <Fill>
+                      <CssParameter name="fill">#00003c</CssParameter><!--글자테두리-->
+                  </Fill>
+                  </Halo>         
+                  <VendorOption name="autoWrap">60</VendorOption>
+                  <VendorOption name="maxDisplacement">90</VendorOption>
+              </TextSymbolizer>
+        </Rule> 
+		<Rule><!--2종근린-->
+            <Title>etc_04000</Title>
+            <ogc:Filter>
+              <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>A8</ogc:PropertyName>
+                <ogc:Literal>04000</ogc:Literal>
+              </ogc:PropertyIsEqualTo>
+            </ogc:Filter>
+              <PolygonSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">#000000</CssParameter>
+                  <CssParameter name="stroke-width">0.5</CssParameter>
+                  </Stroke>
+              </PolygonSymbolizer>
+              <LineSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">
+                      <ogc:Literal>#00c8ff</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="stroke-width">
+                      <ogc:Literal>2</ogc:Literal>
+                  </CssParameter>
+                  </Stroke>
+                  <Fill>
+                  <CssParameter name="Fill">
+                      <ogc:Literal>#00c8ff</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="Fill-width">
+                      <ogc:Literal>0.5</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="fill-opacity">
+                      <ogc:Literal>0.5</ogc:Literal>
+                      </CssParameter>                
+                  </Fill>            
+              </LineSymbolizer>
+              <TextSymbolizer>
+                  <Label>
+                      <ogc:PropertyName>A9</ogc:PropertyName>
+                  </Label>
+                  <Font>
+                  <CssParameter name="font-family">휴먼편지체</CssParameter>               
+                  <CssParameter name="font-size">13</CssParameter>
+                  <CssParameter name="font-style">normal</CssParameter>
+                  <CssParameter name="font-weight">normal</CssParameter>
+                  </Font>
+                  <LabelPlacement>
+                  <PointPlacement>
+                      <AnchorPoint>
+                      <AnchorPointX>0.5</AnchorPointX>
+                      <AnchorPointY>0.5</AnchorPointY>
+                      </AnchorPoint>
+                  </PointPlacement>
+                  </LabelPlacement>
+                  <Halo>
+                  <Radius>3</Radius>
+                  <Fill>
+                      <CssParameter name="fill">#00c8ff</CssParameter>
+                  </Fill>
+                  </Halo>         
+                  <VendorOption name="autoWrap">60</VendorOption>
+                  <VendorOption name="maxDisplacement">90</VendorOption>
+              </TextSymbolizer>
+        </Rule> 
+		<Rule><!--1종근린-->
+            <Title>etc_03000</Title>
+            <ogc:Filter>
+              <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>A8</ogc:PropertyName>
+                <ogc:Literal>03000</ogc:Literal>
+                <ogc:Literal>Z3000</ogc:Literal>
+              </ogc:PropertyIsEqualTo>
+            </ogc:Filter>
+              <PolygonSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">#000000</CssParameter>
+                  <CssParameter name="stroke-width">0.5</CssParameter>
+                  </Stroke>
+              </PolygonSymbolizer>
+              <LineSymbolizer>
+                  <Stroke>
+                  <CssParameter name="stroke">
+                      <ogc:Literal>#0064ff</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="stroke-width">
+                      <ogc:Literal>2</ogc:Literal>
+                  </CssParameter>
+                  </Stroke>
+                  <Fill>
+                  <CssParameter name="Fill">
+                      <ogc:Literal>#0064ff</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="Fill-width">
+                      <ogc:Literal>0.5</ogc:Literal>
+                  </CssParameter>
+                  <CssParameter name="fill-opacity">
+                      <ogc:Literal>0.5</ogc:Literal>
+                      </CssParameter>                
+                  </Fill>            
+              </LineSymbolizer>
+              <TextSymbolizer>
+                  <Label>
+                      <ogc:PropertyName>A9</ogc:PropertyName>
+                  </Label>
+                  <Font>
+                  <CssParameter name="font-family">휴먼편지체</CssParameter>               
+                  <CssParameter name="font-size">13</CssParameter>
+                  <CssParameter name="font-style">normal</CssParameter>
+                  <CssParameter name="font-weight">normal</CssParameter>
+                  </Font>
+                  <LabelPlacement>
+                  <PointPlacement>
+                      <AnchorPoint>
+                      <AnchorPointX>0.5</AnchorPointX>
+                      <AnchorPointY>0.5</AnchorPointY>
+                      </AnchorPoint>
+                  </PointPlacement>
+                  </LabelPlacement>
+                  <Halo>
+                  <Radius>3</Radius>
+                  <Fill>
+                      <CssParameter name="fill">#0064ff</CssParameter>
+                  </Fill>
+                  </Halo>         
+                  <VendorOption name="autoWrap">60</VendorOption>
+                  <VendorOption name="maxDisplacement">90</VendorOption>
+              </TextSymbolizer>
+        </Rule>                         
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

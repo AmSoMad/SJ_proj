@@ -1,0 +1,13 @@
+
+<div class="">
+    <table class="table table-dark table-hover" th:object="${result}">
+      
+
+        <tr>
+            <td th:text="${result.title}"></td>
+            <td th:text="${result.description}" th:href="${result.originallink}"></td>
+        </tr>
+    
+    
+    </table>
+</div>

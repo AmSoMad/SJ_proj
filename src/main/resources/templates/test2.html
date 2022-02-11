@@ -1,0 +1,18 @@
+<link href="https://cdn.osmbuildings.org/4.0.7/OSMBuildings.css" rel="stylesheet">
+<script src="https://cdn.osmbuildings.org/4.0.7/OSMBuildings.js"></script>
+
+<div id="map" style="position:absolute;height:100%;width:100%"></div>
+<script>
+  var map = new OSMBuildings({
+	container: 'map',
+	position: { latitude: 37.49423206599506, longitude: 127.0117839162504 },
+	//zoom: 16,
+	//minZoom: 15,
+	//maxZoom: 20,
+	attribution: '© Data <a href="https://openstreetmap.org/copyright/">OpenStreetMap</a> © Map <a href="https://mapbox.com/">Mapbox</a> © 3D <a href="https://osmbuildings.org/copyright/">OSM Buildings</a>'
+});
+
+map.addMapTiles('https://map.pstatic.net/nrb/styles/satellite/1629360209/{z}/{x}/{y}.png?mt=bg.ol.ts.lp&crs=EPSG:4326');
+
+map.addGeoJSONTiles('https://{s}.data.osmbuildings.org/0.2/anonymous/tile/{z}/{x}/{y}.json');
+</script>

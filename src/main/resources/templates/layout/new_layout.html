@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block th:fragment="f-header">
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="/resources/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/resources/img/favicon2.png">
+  <title>
+    성공하는공장
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="/resources/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/resources/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="/resources/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="/resources/css/soft-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
+</head>
+
+	
+
+</th:block>
+
+<!--
+  <header th:replace="~{'fragments/header' :: headerFragment}"></header>
+
+  <div layout:fragment="content"></div>
+
+  <footer th:replace="~{'fragments/footer' :: footerFragment}"></footer>-->
+
+ <th:block th:fragment="f-script">
+		<!--   Core JS Files   -->
+		<script src="/resources/js/jquery.min.js"></script>
+		<script src="/resources/js/core/popper.min.js"></script>
+		<script src="/resources/js/core/bootstrap.min.js"></script>
+		<script src="/resources/js/plugins/smooth-scrollbar.min.js"></script>
+		<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+		<script src="/resources/js/soft-ui-dashboard.min.js?v=1.0.1"></script>
+		<script src="/resources/js/plugins/chartjs.min.js"></script>
+		<script src="/resources/js/plugins/Chart.extension.js"></script>	
+		
+
+        <!--scripts loaded here -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js"></script>	
+		<script src="https://openlayers.org/en/v6.5.0/build/ol.js"></script>
+		<script src="/resources/js/custom.js"></script>
+		<script src="/resources/js/jspdf.umd.min.js"></script>
+		<!--<script src="/resources/js/exportPDF.js"></script>-->
+		<script src="/resources/js/pointMarker.js"></script>	
+
+
+</th:block>
+  
+</html>

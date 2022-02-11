@@ -1,0 +1,1805 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="/resources/js/jquery.min.js"></script>
+    <link href="/resources/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/js/l_map/l_map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/resources/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/50ae7c5ddb.js" crossorigin="anonymous"></script>
+	  <!-- ol-ext -->
+	  <link rel="stylesheet" href="/resources/css/ol-ext.min.css" />
+	  <!-- CUSTOM CSS Files -->
+	  <link rel="stylesheet" href="/resources/css/ol.css" type="text/css">
+
+    <link href="/resources/css/home.css" rel="stylesheet" />
+	  <link href="/resources/js/sjmap/sjmap.css" rel="stylesheet" />
+	  <link href="https://cdn.osmbuildings.org/4.0.7/OSMBuildings.css" rel="stylesheet">
+  	<script src="https://cdn.osmbuildings.org/4.0.7/OSMBuildings.js"></script>
+
+    <title>성공하는공장</title>
+  </head>
+
+  <body>
+<section class="home-section">
+  <div mode="fixed" class="Headerstyle__HeaderStyle-tx9dco-0 fpHxAV">
+    <div class="top">
+      <div class="logo-wrap"><a><img class="logo" src="https://img.jobkorea.co.kr/trans/c/200x80/s/e/JK_Co_seongjang2020.png"
+            alt="성공하는공장"></a></div>
+      <div class="gnb">
+     <!--    <div class="row">
+          <div class="col-md-3">
+           
+            <p>입주가능지역(건물)</p>
+          </div>
+          <div class="col-md-2">
+        
+            <div class="radio__1">
+              <input id="radio-1" type="radio"  name="radio" value="1">
+              <label for="radio-1">산업단지</label>
+            </div>
+          </div>    
+          <div class="col-md-2">
+           
+            <div class="radio__2">
+              <input id="radio-2" type="radio"  name="radio" value="2">
+              <label for="radio-2">지식산업센터</label>
+            </div>
+          </div>    
+          <div class="col-md-2">
+         
+            <div class="radio__3">
+              <input id="radio-3" type="radio"  name="radio" value="3">
+              <label for="radio-3">공공</label>
+            </div>
+          </div>    
+          <div class="col-md-3">
+
+          </div>  
+
+          <div class="col-md-3">
+            <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1" style="float: right;">
+              <input type="text" class="form-control border-1 ps-1 inputbox_ss" placeholder="지역명 ex) 화성시"
+                name="danji_div_code" aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off"
+                value="경기">
+              <input type="text" class="form-control border-1 ps-1 inputbox_mm" placeholder="산업단지 검색" name="danji_ind_code"
+                aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+              <button class="inputbox_ss btn btn-seungjang btn-sm mb-0 me-1 " name="SearchBtn"
+                onclick="srch_danji($('input[name=danji_div_code]').val(),$('input[name=danji_ind_code]').val())">Search</button>
+            </div>
+          </div>  
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+            <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1" style="float: right;">
+              <input type="text" class="form-control border-1 ps-1 inputbox_ss" placeholder="지역명 ex) 화성시"
+                name="danji_div_code" aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off"
+                value="경기">
+              <input type="text" class="form-control border-1 ps-1 inputbox_mm" placeholder="산업단지 검색" name="danji_ind_code"
+                aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+              <button class="inputbox_ss btn btn-seungjang btn-sm mb-0 me-1 " name="SearchBtn"
+                onclick="srch_danji($('input[name=danji_div_code]').val(),$('input[name=danji_ind_code]').val())">Search</button>
+            </div>
+          </div>  
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+            <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1" style="float:right;">
+              <input type="text" class="form-control border-1 ps-1 inputbox_ss" placeholder="지역명 ex) 화성시"
+                name="danji_div_code" aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off"
+                value="경기">
+              <input type="text" class="form-control border-1 ps-1 inputbox_mm" placeholder="산업단지 검색" name="danji_ind_code"
+                aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+              <button class="inputbox_ss btn btn-seungjang btn-sm mb-0 me-1 " name="SearchBtn"
+                onclick="srch_danji($('input[name=danji_div_code]').val(),$('input[name=danji_ind_code]').val())">Search</button>
+            </div>
+          </div>  
+          <div class="col-md-3">
+
+          </div> 
+          <div class="col-md-3">
+
+          </div>         
+          <div class="col-md-3">
+
+          </div>         --> 
+        </div>
+      </div>
+      <div class="top_btn">
+        <div class="top_btn_menu">
+          <div class="bx_user">
+            <i class='bx bxs-user-account'>로그인</i>
+            <i class='bx bxs-like'>회원가입</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand">성공하는공장</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+  <div id="fullscreen" class="fullscreen">
+      <div id="map" class="map"></div>
+      <div id="popup_nm" class=""></div>
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+        <!-- Content of the menu -->
+        <div id="menu">
+    
+          <div class="">
+            <table class="table-responsive">
+              <thead></thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <!--v월드 레이어 리스트-->
+                    <div class="container-fluid">
+                      <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="지역명 ex) 화성시" name="div_code"
+                          aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="사업자등록번호" name="ind_code"
+                          aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+                        <!-- <button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn" onclick="pointMarker_($('input[name=ind_code]').val())">Search</button> -->
+                        <button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+                          onclick="($('input[name=ind_code]').val())">Search</button>
+                      </div>
+                      <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="지역명 ex) 화성시" name="ksic_div_code"
+                          aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="업종명·코드" name="ksic_ind_code"
+                          aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off" value="10129">
+                        <button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+                          onclick="pointMarker_($('input[name=ksic_ind_code]').val())">Search</button>
+                        <div class='dropdown-menu' id="dropList" style="z-index: 1001;"></div>
+                      </div>
+                      <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="지역명 ex) 화성시"
+                          name="danji_div_code" aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off"
+                          value="경기">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="산업단지 검색" name="danji_ind_code"
+                          aria-haspopup="true" aria-expanded="false" maxlength="5" autocomplete="off">
+                        <button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+                          onclick="srch_danji($('input[name=danji_div_code]').val(),$('input[name=danji_ind_code]').val())">Search</button>
+                      </div>
+                      <div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+                        <input type="text" class="form-control border-1 ps-1" placeholder="주소 검색" id="srch_address"
+                          name="srch_address" aria-haspopup="true" aria-expanded="false" autocomplete="off"
+                          value="서초대로 49길 11">
+                        <button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+                          onclick="srch_addr($('input[name=srch_address]').val())">Search</button>
+    
+                      </div>
+                      <button type="button" class="btn btn-seungjang control_btn swipeBtn" onclick="modeSW(this)"><span
+                          class='tool_name'>SWIPE</span></button>
+                      <div id="readExcel_div1" class="btn btn-seungjang">
+                        <span onclick="document.getElementById('file_1').click();">지번주소</span>
+                        <input type="file" id="file_1" style="width: 70px; display: none;" onchange="readExcel('parcel')">
+                      </div>
+                      <div id="readExcel_div2" class="btn btn-seungjang">
+                        <span onclick="document.getElementById('file_2').click();">도로명주소</span>
+                        <input type="file" id="file_2" style="width: 70px; display: none;" onchange="readExcel('road')">
+                      </div>
+                      <div id="info" class="btn btn-seungjang"><i class="fas fa-search-location"></i>줌상태 0</div>
+                      <div id="srch_ind_code_result" class="btn btn-seungjang"><i class="fas fa-industry"></i>
+                      </div>
+                      <div id="mouseCoordinate_Center" class="btn btn-seungjang" style="display: block;">중심좌표
+                      </div>
+                      <div id="mouseCoordinate" class="btn btn-seungjang" style="display: block;">좌표</div>
+					  <div>
+						Operation:
+						<select id="operation" onchange="setOperation(this.value);">
+						  <option value="normal">normal</option>
+						  <option value="multiply">multiply</option>
+						  <option value="screen">screen</option>
+						  <option value="overlay">overlay</option>
+						  <option value="darken">darken</option>
+						  <option value="lighten">lighten</option>
+						  <option value="color-dodge">color-dodge</option>
+						  <option value="color-burn">color-burn</option>
+						  <option value="hard-light">hard-light</option>
+						  <option value="soft-light">soft-light</option>
+						  <option value="difference">difference</option>
+						  <option value="exclusion">exclusion</option>
+						  <option value="hue">hue</option>
+						  <option value="saturation">saturation</option>
+						  <option value="color">color</option>
+						  <option value="luminosity">luminosity</option>
+						</select>
+					  </div>
+                      <div id='vLayerList' class=""></div>
+                      <p>범례</p>
+                      <div id="nhn_image" class="" style="OVERFLOW-Y:auto;width:100%; height: 185px;">
+                        <img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral1.png"></img>
+                        <img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral2.png"></img>
+                        <img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral4.png"></img>
+                        <img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral5.png"></img>
+                        <img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral3.png"></img>
+                        
+                      </div>
+    
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="data"></div>
+                  </td>
+                </tr>
+                <!-- <tr>
+                      <td>
+                      <div id="info2" class="">
+                        <div class="">
+                        <div><span class=" filter" style="background-color: rgba(255, 0, 128, 0.8);" id="addFeature00">　</span><input type="text" class="" id="addFeatureName00" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(0, 236, 45, 0.8);" id="addFeature01">　</span><input type="text" class="" id="addFeatureName01" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(253, 203, 186, 0.8);" id="addFeature02">　</span><input type="text" class="" id="addFeatureName02" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(58, 65, 111, 0.8);" id="addFeature03">　</span><input type="text" class="" id="addFeatureName03" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(251, 207, 51, 0.8);" id="addFeature04">　</span><input type="text" class="" id="addFeatureName04" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(74, 23, 123, 0.8);" id="addFeature05">　</span><input type="text" class="" id="addFeatureName05" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(254, 228, 218, 0.8);" id="addFeature06">　</span><input type="text" class="" id="addFeatureName06" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(33, 212, 203, 0.8);" id="addFeature07">　</span><input type="text" class="" id="addFeatureName07" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(171, 37, 76, 0.8);" id="addFeature08">　</span><input type="text" class="" id="addFeatureName08" style="width: 200px;" disabled><br></div>
+                        <div><span class=" filter" style="background-color: rgba(31, 141, 106, 0.8);"     id="addFeature09">　</span><input type="text" class="" id="addFeatureName09" style="width: 200px;" disabled><br></div>
+                        </div>
+                      </div>   
+                      </td>
+                      </tr> -->
+              </tbody>
+            </table>
+            <div class="col">
+    
+            </div>
+            <div class="col">
+    
+            </div>
+            <div class="col">
+    
+            </div>
+          </div>
+        </div>
+        <div id="menu2">
+          <h1>레이어정보표출</h1>
+          <p style="border-bottom:1px solid #999;">
+            <!-- <i>--</i> -->
+            <div id="wms_image" class="" style="width: 100%;height: 500px;overflow-x: hidden;overflow-y: auto;"></div>
+            <div id="wfs_result" class="" ></div>
+          	<div id="dist_info" style="width: 100%;height: 300px;overflow-x: hidden;overflow-y: auto;"></div>
+          
+          </p>
+        </div>
+        <div id="menu3">
+          <h1>Menu3</h1>
+          <p style="border-bottom:1px solid #999;">
+            <i>산업단지</i>
+          </p>
+          <!-- <div class="container-fluid"></div> -->
+          <div class="container-fluid">
+            <div class="navbar-brand" style="font-size: 13px;">
+              <div class="nav-wrapper position-relative end-0">
+                <nav style="height: 30px;">
+                  <ul class="nav nav-pills nav-fill p-1" role="tablist">
+    
+                    <li class="nav-item">
+                      <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#tab-1" role="tab"
+                        aria-controls="preview" aria-selected="true" data-tab="tab-1">
+                        업종별가능여부
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-2" role="tab" aria-controls="code"
+                        aria-selected="false" data-tab="tab-2">
+                        관리기본계획
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-3" role="tab" aria-controls="code"
+                        aria-selected="false" data-tab="tab-3">
+                        산업단지소식(개발중)
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-4" role="tab" aria-controls="code"
+                        aria-selected="false" data-tab="tab-4">
+                        지자체혜택(개발중)
+                      </a>
+                    </li>
+    
+                  </ul>
+                </nav>
+              </div>
+            </div>
+    
+            <div id="tab-1" class="tab-content height_100 current ">
+              <!--탭1-->
+              <div id="danji_info"></div>
+            </div>
+            <div id="tab-2" class="tab-content height_100">
+              <!--탭2-->
+              <div id="myPdf" style="height: 758px;"></div>
+            </div>
+            <div id="tab-3" class="tab-content height_100">
+              <!--탭3-->
+    
+            </div>
+            <div id="tab-4" class="tab-content height_100">
+              <!--탭4-->
+    
+            </div>
+    
+          </div> <!-- 끝 -->
+          <!-- <div id="danji_info"></div>
+                      <div id="myPdf"></div> -->
+        </div>
+        <div id="menu4">
+          <h1>Menu4</h1>
+          <p style="border-bottom:1px solid #999;">
+            <i>기반시설</i>
+          </p>
+          <div class="d-flex float-start" style="/*height: 872px;*/">
+            <ul class="nav nav-pills nav-fill flex-column" role="tablist" style="/*writing-mode: tb-rl;*/">
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link active border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+                  data-bs-toggle="pill" href="#tab-1" style="writing-mode: tb-rl;">세로텝1번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-2" style="writing-mode: tb-rl;">세로탭2번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-3" style="writing-mode: tb-rl;">세로탭3번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-13" style="writing-mode: tb-rl;">세로탭4번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-14" style="writing-mode: tb-rl;">세로탭5번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-15" style="writing-mode: tb-rl;">세로텝 6번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-16" style="writing-mode: tb-rl;">세로탭7번</a></li>
+              <li class="nav-item" role="presentation"><a
+                  class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab" data-bs-toggle="pill"
+                  href="#tab-19" style="writing-mode: tb-rl;">세로탭8번</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" role="tabpanel" id="tab-1">
+                <div>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-4">Tab 4</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab"
+                        href="#tab-5">Tab 5</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-6">Tab 6</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-17">Tab</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-18">Tab</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane" role="tabpanel" id="tab-4">
+                      <div class="simple-slider" style="width: 360px;">
+                        <div class="swiper-container">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                              style="background: url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center center / cover no-repeat;width: 360px;">
+                            </div>
+                            <div class="swiper-slide"
+                              style="background: url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center center / cover no-repeat;">
+                            </div>
+                            <div class="swiper-slide"
+                              style="background: url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center center / cover no-repeat;">
+                            </div>
+                          </div>
+                          <div class="swiper-pagination"></div>
+                          <div class="swiper-button-prev"></div>
+                          <div class="swiper-button-next"></div>
+                        </div>
+                      </div>
+                      <div style="margin: 10px;"><canvas height="0" style="display: block; width: 0px; height: 0px;"
+                          width="0"></canvas></div>
+                    </div>
+                    <div class="tab-pane active" role="tabpanel" id="tab-5" style="/*width: 356px;*/"></div>
+                    <div class="tab-pane" role="tabpanel" id="tab-6">
+                      <p>Content for tab 6.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-17">
+                      <p>Tab content.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-18">
+                      <p>Tab content.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-2">
+                <div>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab"
+                        href="#tab-7">Tab 7</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-8">Tab 8</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-9">Tab 9</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-24">Tab</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-25">Tab</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="tab-7">
+                      <p>Content for tab 7.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-8">
+                      <p>Content for tab 8.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-9">
+                      <p>Content for tab 9.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-24">
+                      <p>Tab content.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-25">
+                      <p>Tab content.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-3">
+                <div>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab"
+                        href="#tab-10">Tab 10</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-11">Tab 11</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                        href="#tab-12">Tab 12</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="tab-10">
+                      <p>Content for tab 10.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-11">
+                      <p>Content for tab 11.</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-12">
+                      <p>Content for tab 12.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-13">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-14">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-15">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-16">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-19">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-20">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-21">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-22">
+                <p>Tab content.</p>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="tab-23">
+                <p>Tab content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="menu5">
+          <h1>Menu5</h1>
+          <p style="border-bottom:1px solid #999;">
+            <i>제조현황</i>
+          </p>
+        </div>
+        <div id="menu6">
+          <h1>Menu6</h1>
+          <p style="border-bottom:1px solid #999;">
+            <i>미정입니다.</i>
+          </p>
+        </div>
+      </div>
+  </div>
+  
+	<div class="top_menu">
+		<div class="main_menu">
+			<ul class="clear">
+				<li class="mm1"><a href="#"><i class='bx bx-sitemap bx-flashing-hover ' >제조지역</i><span class="under_bar"></span></a></li>
+				<li class="mm2"><a href="#"><i class='bx bx-check bx-flashing-hover'>기반시설</i><span class="under_bar"></span></a></li>
+				<li class="mm3"><a href="#">제조연관산업<span class="under_bar"></span></a></li>
+				<li class="mm4"><a href="#"><i class='bx bx-certification bx-flashing-hover' >인증/인허가</i><span class="under_bar"></span></a></li>
+				<li class="mm5"><a href="#">제조지원<span class="under_bar"></span></a></li>
+				<li class="mm6"><a href="#">수출<span class="under_bar"></span></a></li>
+		        <li class="mm7"><a href="#">K-성장산업<span class="under_bar"></span></a></li>
+				<li class="mm8"><a href="#">임시작업<span class="under_bar"></span></a></li>
+			</ul>
+		</div>
+
+		<div class="sub_menu">
+			<div class="depth1 depth1_1">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+					<li>
+                <a href=""><i class='bx bx-water' ></i>하수처리시설</a>
+                <ul class="depth2">
+<!--                   <li><a href="#" onclick="swgtr_fclty()">전국하수처리시설</a></li>
+                  <li><a href="">1-1-2메뉴</a></li>
+                  <li><a href="">1-1-3메뉴</a></li> -->
+                </ul>
+              
+					</li>
+				
+					<li>
+						<a href=""><i class='bx bxs-trash'></i>폐기물처리</a>
+						<ul class="depth2">
+<!-- 							<li><a href="#" onclick="waste_fclty()">전국폐기물처리시설</a></li>
+							<li><a href="">1-2-2메뉴</a></li>
+							<li><a href="">1-2-3메뉴</a></li> -->
+						</ul>
+					</li>
+				
+<!-- 					<li>
+						<a href="">1-3메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-3-1메뉴</a></li>
+							<li><a href="">1-3-2메뉴</a></li>
+							<li><a href="">1-3-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-4메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-4-1메뉴</a></li>
+							<li><a href="">1-4-2메뉴</a></li>
+							<li><a href="">1-4-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-5메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-5-1메뉴</a></li>
+							<li><a href="">1-5-2메뉴</a></li>
+							<li><a href="">1-5-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-6메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-6-1메뉴</a></li>
+							<li><a href="">1-6-2메뉴</a></li>
+							<li><a href="">1-6-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-7메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-7-1메뉴</a></li>
+							<li><a href="">1-7-2메뉴</a></li>
+							<li><a href="">1-7-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-8메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-8-1메뉴</a></li>
+							<li><a href="">1-8-2메뉴</a></li>
+							<li><a href="">1-8-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-9메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-9-1메뉴</a></li>
+							<li><a href="">1-9-2메뉴</a></li>
+							<li><a href="">1-9-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-10메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-10-1메뉴</a></li>
+							<li><a href="">1-10-2메뉴</a></li>
+							<li><a href="">1-10-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-11메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-11-1메뉴</a></li>
+							<li><a href="">1-11-2메뉴</a></li>
+							<li><a href="">1-11-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">1-12메뉴</a>
+						<ul class="depth2">
+							<li><a href="">1-12-1메뉴</a></li>
+							<li><a href="">1-12-2메뉴</a></li>
+							<li><a href="">1-12-3메뉴</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+
+			<div class="depth1 depth1_2">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+        <span style="margin-left: 50px;">유틸리티</span>
+        <span style="margin-left: 1168px;">폐수&폐기물</span>
+				<ul class="clear">
+						
+					<li>
+						<a href="#"><i class="fas fa-bolt">전기</i></a>
+<!-- 						<ul class="depth2">
+							<li><a href="">3-1-1메뉴</a></li>
+							<li><a href="">3-1-2메뉴</a></li>
+							<li><a href="">3-1-3메뉴</a></li>
+						</ul> -->
+					</li>
+				
+					<li>
+						<a href=""><i class='bx bx-water bx-tada-hover' >수도</i></a>
+<!-- 						<ul class="depth2">
+							<li><a href="">지역별 수도 요금</a></li>
+							<li><a href="">3-2-2메뉴</a></li>
+							<li><a href="">3-2-3메뉴</a></li>
+						</ul> -->
+					</li>
+				
+					<li>
+						<a href=""><i class='bx bx-gas-pump bx-tada-hover' >가스</i></a>
+<!-- 						<ul class="depth2">
+							<li><a href="">지역별 도시가스 공급 업체</a></li>
+							<li><a href="">도시가스 미공급 지역</a></li>
+							<li><a href="">3-3-3메뉴</a></li>
+						</ul> -->
+					</li>
+				
+					<li>
+						<a href=""><i class='bx bx-sun bx-tada-hover' >열(스팀)</i></a>
+<!-- 						<ul class="depth2">
+							<li><a href="">스팀 공급되는 산업단지</a></li>
+							<li><a href="">3-4-2메뉴</a></li>
+							<li><a href="">3-4-3메뉴</a></li>
+						</ul> -->
+					</li>
+				
+					<li>
+						<a href=""><i class="fas fa-hand-holding-water">폐수</i></a>
+						<ul class="depth2">
+							<li><a href="#" onclick="swgtr_fclty()"><i class="fas fa-faucet">폐수처리장</i></a></li>
+							<!-- <li><a href="#">3-5-2메뉴</a></li>
+							<li><a href="#">3-5-3메뉴</a></li> -->
+						</ul>
+					</li>
+				
+					<li>
+						<a href=""><i class="fas fa-dumpster-fire">폐기물</i></a>
+						<ul class="depth2">
+							<li><a href="#" onclick="waste_fclty('2')"><i class="fas fa-biohazard">지정 폐기물 재활용업 허가 기업</i></a></li>
+							<li><a href="#" onclick="waste_fclty('1')"><i class="fas fa-recycle">사업장 폐기물 재활용업 허가 기업</i></a></li>
+							<li><a href="#" onclick="waste_fclty_sandan('2')"><i class="fas fa-biohazard">산업단지내 지정 폐기물 재활용업 허가 기업</i></a></li>
+							<li><a href="#" onclick="waste_fclty_sandan('1')"><i class="fas fa-recycle">산업단지내 사업장 폐기물 재활용업 허가 기업</i></a></li>
+              <li><a href="#">폐기물 수집운반업 허가 기업(생활/사업장)</a></li>
+              <li><a href="#">폐기물 수집운반업 허가 기업(건설)</a></li>
+              <li><a href="#">폐기물 수집운반업 허가 기업(지정)</a></li>
+              <li><a href="#">폐기물 수집운반업 허가 기업(사업장/소각)</a></li>
+              <li><a href="#">폐기물 최종처분 기업(매립) : 사업장</a></li>
+              <li><a href="#">폐기물 최종처분 기업(매립) : 지정</a></li>
+						</ul>
+					</li>
+				
+			</div>
+
+			<div class="depth1 depth1_3">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+						
+					<li>
+						<a href="">스마트공장(& IT)</a>
+						<ul class="depth2">
+							<li><a href="#" onclick="supply_companies()">스마트공장 공급 기업</a></li>
+							<!-- <li><a href="">3-1-3메뉴</a></li> -->
+						</ul>
+					</li>
+          <li>
+						<a href="">산업디자인</a>
+						<ul class="depth2">
+							<li><a href="">산업디자인 전문회사</a></li>
+							<!-- <li><a href="">3-1-3메뉴</a></li> -->
+						</ul>
+					</li>
+
+
+				
+				</ul>
+			</div>
+
+			<div class="depth1 depth1_4">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+<!-- 					<li>
+						<a href="">4-1메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-1-1메뉴</a></li>
+							<li><a href="">4-1-2메뉴</a></li>
+							<li><a href="">4-1-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-2메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-2-1메뉴</a></li>
+							<li><a href="">4-2-2메뉴</a></li>
+							<li><a href="">4-2-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-3메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-3-1메뉴</a></li>
+							<li><a href="">4-3-2메뉴</a></li>
+							<li><a href="">4-3-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-4메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-4-1메뉴</a></li>
+							<li><a href="">4-4-2메뉴</a></li>
+							<li><a href="">4-4-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-5메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-5-1메뉴</a></li>
+							<li><a href="">4-5-2메뉴</a></li>
+							<li><a href="">4-5-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-6메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-6-1메뉴</a></li>
+							<li><a href="">4-6-2메뉴</a></li>
+							<li><a href="">4-6-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-7메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-7-1메뉴</a></li>
+							<li><a href="">4-7-2메뉴</a></li>
+							<li><a href="">4-7-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-8메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-8-1메뉴</a></li>
+							<li><a href="">4-8-2메뉴</a></li>
+							<li><a href="">4-8-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-9메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-9-1메뉴</a></li>
+							<li><a href="">4-9-2메뉴</a></li>
+							<li><a href="">4-9-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-10메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-10-1메뉴</a></li>
+							<li><a href="">4-10-2메뉴</a></li>
+							<li><a href="">4-10-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-11메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-11-1메뉴</a></li>
+							<li><a href="">4-11-2메뉴</a></li>
+							<li><a href="">4-11-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">4-12메뉴</a>
+						<ul class="depth2">
+							<li><a href="">4-12-1메뉴</a></li>
+							<li><a href="">4-12-2메뉴</a></li>
+							<li><a href="">4-12-3메뉴</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+
+			<div class="depth1 depth1_5">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+		<!-- 			<li>
+						<a href="">5-1메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-1-1메뉴</a></li>
+							<li><a href="">5-1-2메뉴</a></li>
+							<li><a href="">5-1-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-2메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-2-1메뉴</a></li>
+							<li><a href="">5-2-2메뉴</a></li>
+							<li><a href="">5-2-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-3메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-3-1메뉴</a></li>
+							<li><a href="">5-3-2메뉴</a></li>
+							<li><a href="">5-3-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-4메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-4-1메뉴</a></li>
+							<li><a href="">5-4-2메뉴</a></li>
+							<li><a href="">5-4-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-5메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-5-1메뉴</a></li>
+							<li><a href="">5-5-2메뉴</a></li>
+							<li><a href="">5-5-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-6메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-6-1메뉴</a></li>
+							<li><a href="">5-6-2메뉴</a></li>
+							<li><a href="">5-6-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-7메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-7-1메뉴</a></li>
+							<li><a href="">5-7-2메뉴</a></li>
+							<li><a href="">5-7-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-8메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-8-1메뉴</a></li>
+							<li><a href="">5-8-2메뉴</a></li>
+							<li><a href="">5-8-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-9메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-9-1메뉴</a></li>
+							<li><a href="">5-9-2메뉴</a></li>
+							<li><a href="">5-9-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-10메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-10-1메뉴</a></li>
+							<li><a href="">5-10-2메뉴</a></li>
+							<li><a href="">5-10-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-11메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-11-1메뉴</a></li>
+							<li><a href="">5-11-2메뉴</a></li>
+							<li><a href="">5-11-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">5-12메뉴</a>
+						<ul class="depth2">
+							<li><a href="">5-12-1메뉴</a></li>
+							<li><a href="">5-12-2메뉴</a></li>
+							<li><a href="">5-12-3메뉴</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+
+			<div class="depth1 depth1_6">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+	<!-- 				<li>
+						<a href="">6-1메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-1-1메뉴</a></li>
+							<li><a href="">6-1-2메뉴</a></li>
+							<li><a href="">6-1-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-2메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-2-1메뉴</a></li>
+							<li><a href="">6-2-2메뉴</a></li>
+							<li><a href="">6-2-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-3메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-3-1메뉴</a></li>
+							<li><a href="">6-3-2메뉴</a></li>
+							<li><a href="">6-3-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-4메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-4-1메뉴</a></li>
+							<li><a href="">6-4-2메뉴</a></li>
+							<li><a href="">6-4-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-5메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-5-1메뉴</a></li>
+							<li><a href="">6-5-2메뉴</a></li>
+							<li><a href="">6-5-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-6메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-6-1메뉴</a></li>
+							<li><a href="">6-6-2메뉴</a></li>
+							<li><a href="">6-6-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-7메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-7-1메뉴</a></li>
+							<li><a href="">6-7-2메뉴</a></li>
+							<li><a href="">6-7-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-8메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-8-1메뉴</a></li>
+							<li><a href="">6-8-2메뉴</a></li>
+							<li><a href="">6-8-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-9메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-9-1메뉴</a></li>
+							<li><a href="">6-9-2메뉴</a></li>
+							<li><a href="">6-9-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-10메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-10-1메뉴</a></li>
+							<li><a href="">6-10-2메뉴</a></li>
+							<li><a href="">6-10-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-11메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-11-1메뉴</a></li>
+							<li><a href="">6-11-2메뉴</a></li>
+							<li><a href="">6-11-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-12메뉴</a>
+						<ul class="depth2">
+							<li><a href="">6-12-1메뉴</a></li>
+							<li><a href="">6-12-2메뉴</a></li>
+							<li><a href="">6-12-3메뉴</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+			<div class="depth1 depth1_7">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+	<!-- 				<li>
+						<a href="">6-1메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-1-1메뉴</a></li>
+							<li><a href="">7-1-2메뉴</a></li>
+							<li><a href="">7-1-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-2메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-2-1메뉴</a></li>
+							<li><a href="">7-2-2메뉴</a></li>
+							<li><a href="">7-2-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-3메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-3-1메뉴</a></li>
+							<li><a href="">7-3-2메뉴</a></li>
+							<li><a href="">7-3-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-4메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-4-1메뉴</a></li>
+							<li><a href="">7-4-2메뉴</a></li>
+							<li><a href="">7-4-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-5메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-5-1메뉴</a></li>
+							<li><a href="">7-5-2메뉴</a></li>
+							<li><a href="">7-5-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-6메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-6-1메뉴</a></li>
+							<li><a href="">7-6-2메뉴</a></li>
+							<li><a href="">7-6-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-7메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-7-1메뉴</a></li>
+							<li><a href="">7-7-2메뉴</a></li>
+							<li><a href="">7-7-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-8메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-8-1메뉴</a></li>
+							<li><a href="">7-8-2메뉴</a></li>
+							<li><a href="">7-8-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-9메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-9-1메뉴</a></li>
+							<li><a href="">7-9-2메뉴</a></li>
+							<li><a href="">7-9-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-10메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-10-1메뉴</a></li>
+							<li><a href="">7-10-2메뉴</a></li>
+							<li><a href="">7-10-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-11메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-11-1메뉴</a></li>
+							<li><a href="">7-11-2메뉴</a></li>
+							<li><a href="">7-11-3메뉴</a></li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="">6-12메뉴</a>
+						<ul class="depth2">
+							<li><a href="">7-12-1메뉴</a></li>
+							<li><a href="">7-12-2메뉴</a></li>
+							<li><a href="">7-12-3메뉴</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>     
+			<div class="depth1 depth1_8">
+				<button class="close_btn"><img src="/resources/images/main/fmw_close.png" width="22" height="22" border="0" alt="" /></button>
+				<ul class="clear">
+					<li>
+						<a href="">긴급점검</a>
+						<ul class="depth2">
+							<li><a href="#" onclick="reg_fac_list(1)"><i class="fas fa-industry">산업단지내 등록공장</i></a></li>
+							<li><a href="#" onclick="reg_fac_list(2)"><i class="fas fa-industry">산업단지외 등록공장</i></a></li>
+							<!-- <li><a href="">7-1-3메뉴</a></li> -->
+						</ul>
+					</li>
+				
+				</ul>
+			</div>   
+		</div>
+	</div>
+
+	<div class="left_wrap">
+		<div class="left_nav">
+			<ul>
+        		<li class="left_nav0">
+					<button>
+						<span class="bx bx-video-recording bx-tada-hover bx-md bx-border"></span>
+						<h2>#영상</h2>
+					</button>
+				</li>
+				<li class="left_nav1">
+					<button>
+						<span class="bx bxs-factory bx-tada-hover bx-md bx-border"></span>
+						<h2>공장</h2>
+					</button>
+				</li>
+				<li class="left_nav2">
+					<button>
+						<span class="bx bx-water bx-tada-hover bx-md bx-border"></span>
+						<h2>폐기물</h2>
+					</button>
+				</li>
+				<li class="left_nav7">
+
+					<button>
+						<span class="bx bx-line-chart bx-tada-hover bx-md bx-border"></span>
+						<h2>폐수처리</h2>
+					</button>
+				</li>
+				<li class="left_nav3">
+					<button>
+						<span class="bx bx-building-house bx-tada-hover bx-md bx-border"></span>
+						<h2>#창고</h2>
+					</button>
+				</li>
+				<li class="left_nav4">
+					<button>
+						<span class="bx bx-store-alt bx-tada-hover bx-md bx-border"></span>
+						<h2>#지식산업</h2>
+					</button>
+				</li>
+        		<li class="left_nav5">
+					<button>
+						<span class="bx bx-library bx-tada-hover bx-md bx-border"></span>
+						<h2>#개발중</h2>
+					</button>
+				</li>
+        		<li class="left_nav6">
+					<button>
+						<span class="bx bxs-building-house bx-tada-hover bx-md bx-border"></span>
+						<h2>#개발중</h2>
+					</button>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="left_cnt">
+			<div class="left_cnt_wrap">
+				<div class="left_cnt0 lc">
+					<ul class="depth1">
+						<li>
+							<div class="tit">
+								<button class="clear on">
+									<h3>산업영상<img src="/resources/images/main/arrow_icon.jpg" width="10" height="6" border="0" alt="" /></h3>
+									<p>랜덤재생</p>
+								</button>
+							</div>
+				
+							<div class="youtube">
+                				<!-- <iframe width="100%" height="400px" src="https://www.youtube.com/embed/Q8SdPwKD8d0?autoplay=1&mute=1&loop-1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+							</div>
+						</li>            
+						<li>
+							<div class="tit">
+								<button class="clear on">
+									<h3>주변 업체 정보<img src="/resources/images/main/arrow_icon.jpg" width="10" height="6" border="0" alt="" /></h3>
+									<p>정부기관</p>
+								</button>
+							</div>
+				
+							<div class="txt">
+								<ul class="depth2">
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>036-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+									<li class="clear">
+										<h4>경기도청</h4>
+										<p>031-123-4567</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>        
+				<div class="left_cnt1 lc">
+					<div class="container-fluid">
+						<div class="navbar-brand" style="font-size: 13px;">
+						  <div class="nav-wrapper position-relative end-0">
+							<nav style="height: 30px;">
+							  <ul class="nav nav-pills nav-fill p-1" role="tablist">
+				
+								<li class="nav-item">
+								  <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#left_tab-1" role="tab" aria-controls="preview" aria-selected="true" data-tab="left_tab-1">
+									등록공장대장정보
+								  </a>
+								</li>
+								<li class="nav-item">
+								  <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#left_tab-2" role="tab" aria-controls="code" aria-selected="false" data-tab="left_tab-2">
+									산업단지정보
+								  </a>
+								</li>
+								<li class="nav-item">
+								  <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#left_tab-3" role="tab" aria-controls="code" aria-selected="false" data-tab="left_tab-3">
+									관리기본계획
+								  </a>
+								</li>
+								<li class="nav-item">
+								  <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#left_tab-4" role="tab" aria-controls="code" aria-selected="false" data-tab="left_tab-4">
+									지자체혜택(개발중)
+								  </a>
+								</li>
+				
+							  </ul>
+							</nav>
+						  </div>
+						</div>
+				
+						<div id="left_tab-1" class="tab-content height_100 current active">
+						  <!--탭1-->
+							<ul class="depth1">
+								<li>
+									공장이 검색되지 않았습니다.
+								</li>
+							
+							</ul>
+						</div>
+						<div id="left_tab-2" class="tab-content height_100">
+						  <!--탭2-->
+							<ul class="depth1">
+								<li>
+									산업단지를 선택해주세요.
+								</li>
+						
+							</ul>
+						</div>
+						<div id="left_tab-3" class="tab-content height_100">
+
+							<div id="left_myPdf" style="height: 758px;">
+								<ul class="depth1">
+									<li>
+										산업단지를 선택해주세요.
+									</li>
+							
+								</ul>
+							</div>
+						</div>
+						<div id="left_tab-4" class="tab-content height_100">
+						  <!--탭4-->
+				
+						</div>
+				
+					  </div>
+
+				</div>
+				
+				<div class="left_cnt2 lc" id="lef_cnt2">
+					<ul class="depth1">
+						<li>	
+							<div class="txt">
+								<ul class="depth2">
+									<li class="clear">
+										<h4></h4>
+										<p>선택된 폐기물처리장이 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="left_cnt3 lc">
+						<ul class="depth1">
+						<li>	
+							<div class="txt">
+								<ul class="depth2">
+									<li class="clear">
+										<h4></h4>
+										<p>선택된 폐수처리업장 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="left_cnt4 lc"></div>
+
+        		<div class="left_cnt5 lc"></div>
+
+				<div class="left_cn6 lc">
+					<ul class="depth1">
+						<li>	
+							<div class="txt">
+								<ul class="depth2">
+									<li class="clear">
+										<h4></h4>
+										<p>선택된 기반시설이 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="left_cnt7 lc" id="lef_cnt7">
+					<ul class="depth1">
+						<li>	
+							<div class="txt">
+								<ul class="depth2">
+									<li class="clear">
+										<h4></h4>
+										<p>선택된 하수처리시설이 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					
+				</div>
+			</div>
+
+			<div class="arrow_btn"><button><img src="/resources/images/main/open_btn.jpg" width="7" height="12" border="0" alt="" /></button></div>
+		</div>
+	</div>
+
+	<div style="display: none;">
+		<label>
+			<input type="checkbox" style="display: none;" id="rotateWithView">
+		</label>
+		<form id="wfsForm">
+			<input type="hidden" name="key" value="52AED5A5-5D49-35C0-97A4-AC567AA055F7">
+			<!-- <input type="hidden" name="domain" value="http://seongjang.com">-->
+			<input type="hidden" name="SERVICE" value="WFS">
+			<input type="hidden" name="version" value="1.1.0">
+			<input type="hidden" name="request" value="GetFeature">
+			<input type="hidden" name="TYPENAME" value="">
+			<input type="hidden" name="OUTPUT" value="text/javascript">
+			<input type="hidden" name="SRSNAME" value="EPSG:3857">
+			<input type="hidden" name="BBOX" value="">
+		</form>
+		<input type="hidden" name="SGIS_AccessToken" value="">
+		<input type="hidden" name="road_address" value="">
+		<input type="hidden" name="bunji_address" value="">
+    <input type="hidden" name="sido_nm" value="">
+	</div>
+  <div class="notce_alert c4 active" style="opacity: 0.8;display: none;">
+    <div class="na_wrapper">
+        <a href="#" target="_self" class="na_slide maq" style="animation-duration: 22.6s;">현재 원인을 파악하고 있습니다. 이용에 불편을 드려 죄송합니다. 최대한 빠르게 정상화 조치하겠습니다.</a>
+    </div>
+    <a href="#" class="btn_na_close"><span>닫기</span></a>
+  </div>
+</section>
+    <script>
+      $(".notce_alert .btn_na_close").on("click", function (e) {
+          e.preventDefault();
+          $(".notce_alert").hide();
+      });
+
+      $(window).on("resize load", function () {
+              $(".notce_alert").addClass("active");
+
+              var outer = $(".na_wrapper").outerWidth();
+              var inner = $(".na_slide").outerWidth();
+              var val = (inner / outer).toFixed(2) * 20;
+
+              if (outer < inner) {
+                  $(".na_slide").addClass("maq").css({ animationDuration: val + "s" });
+              }
+              else {
+                  $(".na_slide").removeClass("maq");
+              }
+          
+      })
+    </script>
+    <script type="text/javascript">
+    
+
+// css부분
+$(document).ready(function (){
+	function c1 () {
+		var $lc1Btn=$(".left_wrap .left_cnt .left_cnt1 .depth1 > li .tit button");
+		var $lc2Btn=$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div .sub_depth1 > li .sub_depth1_tit button");
+		var $lc2Btn2=$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt .sub_tab_cnt1 .sub_depth1 > li.sd1_4 .sub_depth2 li .sub_depth2_tit button");
+		var $lcbtn1=$(".left_wrap .left_cnt .left_cnt7 .left_cnt2_btn li.lcbtn1 button");
+		var $lcbtn2=$(".left_wrap .left_cnt .left_cnt7 .left_cnt2_btn li.lcbtn2 button");
+		var $lcbtn3=$(".left_wrap .left_cnt .left_cnt7 .left_cnt2_btn li.lcbtn3 button");
+		var $lcbtn4=$(".left_wrap .left_cnt .left_cnt7 .left_cnt2_btn li.lcbtn4 button");
+		var $lcbtn5=$(".left_wrap .left_cnt .left_cnt7 .left_cnt2_btn li.lcbtn5 button");
+
+		var $lc6Btn=$(".left_wrap .left_cnt .left_cnt6 .tab_cnt .sub_tab_cnt > div .sub_depth1 > li .sub_depth1_tit button");
+		var $lc26tn2=$(".left_wrap .left_cnt .left_cnt6 .tab_cnt .sub_tab_cnt .sub_tab_cnt1 .sub_depth1 > li.sd1_4 .sub_depth2 li .sub_depth2_tit button");
+
+		var $arrowBtn=$(".left_wrap .arrow_btn");
+		var $leftCnt=$(".left_wrap .left_cnt");
+
+	var $lc2Btn=$(".left_wrap .left_cnt .left_cnt2 .depth1 > li .tit button");
+    var $lc3Btn=$(".left_wrap .left_cnt .left_cnt3 .depth1 > li .tit button");
+    var $lc4Btn=$(".left_wrap .left_cnt .left_cnt4 .depth1 > li .tit button");
+    var $lc5Btn=$(".left_wrap .left_cnt .left_cnt5 .depth1 > li .tit button");
+    var $lc6Btn=$(".left_wrap .left_cnt .left_cnt6 .depth1 > li .tit button");
+    var $lc7Btn=$(".left_wrap .left_cnt .left_cnt7 .depth1 > li .tit button");
+
+		$(window).on("resize",function  () {
+			var hei=$(this).outerHeight();
+			var wid=$(this).outerWidth();
+
+			$(".left_wrap").css("height",hei-70);
+			$(".top_menu .sub_menu > div").css("width",wid-64);
+		});
+		$(window).trigger("resize");
+
+
+		$lcbtn1.on("click", function  () {
+			$(this).parent().addClass("on").siblings().removeClass("on")
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li").find(".sub_depth2").stop().slideUp()
+			$(".left_wrap .left_cnt .left_cnt_wrap .left_cnt7 .tab_cnt .sub_tab_cnt > div .sub_depth1 > li .sub_depth1_tit button h4 img").css({"transform":"rotate(0deg)"});
+		});
+
+		$lcbtn2.on("click", function  () {
+			$(this).parent().addClass("on").siblings().removeClass("on")
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_1 .sub_depth1_tit button").click()
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_1").siblings().find(".sub_depth2").stop().slideUp()
+		});
+
+		$lcbtn3.on("click", function  () {
+			$(this).parent().addClass("on").siblings().removeClass("on")
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_2 .sub_depth1_tit button").click()
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_2").siblings().find(".sub_depth2").stop().slideUp()
+		});
+
+		$lcbtn4.on("click", function  () {
+			$(this).parent().addClass("on").siblings().removeClass("on")
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_3 .sub_depth1_tit button").click()
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_3").siblings().find(".sub_depth2").stop().slideUp()
+		});
+
+		$lcbtn5.on("click", function  () {
+			$(this).parent().addClass("on").siblings().removeClass("on")
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_4 .sub_depth1_tit button").click()
+			$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_cnt > div.on .sub_depth1 > li.sd1_4").siblings().find(".sub_depth2").stop().slideUp()
+		});
+
+
+		$lc1Btn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$(this).removeClass("on").parent().next().stop().slideUp()
+				$(this).find("img").css({"transform":"rotate(0deg)"});
+			}else {
+				$(this).addClass("on").parent().next().stop().slideDown()
+				$(this).find("img").css({"transform":"rotate(180deg)"});
+			}
+		});
+
+    $lc3Btn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$(this).removeClass("on").parent().next().stop().slideUp()
+				$(this).find("img").css({"transform":"rotate(0deg)"});
+			}else {
+				$(this).addClass("on").parent().next().stop().slideDown()
+				$(this).find("img").css({"transform":"rotate(180deg)"});
+			}
+		});
+
+    $lc4Btn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$(this).removeClass("on").parent().next().stop().slideUp()
+				$(this).find("img").css({"transform":"rotate(0deg)"});
+			}else {
+				$(this).addClass("on").parent().next().stop().slideDown()
+				$(this).find("img").css({"transform":"rotate(180deg)"});
+			}
+		});
+
+    $lc5Btn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$(this).removeClass("on").parent().next().stop().slideUp()
+				$(this).find("img").css({"transform":"rotate(0deg)"});
+			}else {
+				$(this).addClass("on").parent().next().stop().slideDown()
+				$(this).find("img").css({"transform":"rotate(180deg)"});
+			}
+		});
+
+    $lc6Btn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$(this).removeClass("on").parent().next().stop().slideUp()
+				$(this).find("img").css({"transform":"rotate(0deg)"});
+			}else {
+				$(this).addClass("on").parent().next().stop().slideDown()
+				$(this).find("img").css({"transform":"rotate(180deg)"});
+			}
+		});
+
+    $lc7Btn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$(this).removeClass("on").parent().next().stop().slideUp()
+				$(this).find("img").css({"transform":"rotate(0deg)"});
+			}else {
+				$(this).addClass("on").parent().next().stop().slideDown()
+				$(this).find("img").css({"transform":"rotate(180deg)"});
+			}
+		});
+	$lc2Btn.on("click", function  () {
+		if ($(this).hasClass("on")) {
+			$(this).removeClass("on").parent().next().stop().slideUp()
+			$(this).find("img").css({"transform":"rotate(0deg)"});
+		}else {
+			$(this).addClass("on").parent().next().stop().slideDown()
+			$(this).find("img").css({"transform":"rotate(180deg)"});
+		}
+	});
+
+
+	$lc2Btn2.on("click", function  () {
+		if ($(this).hasClass("on")) {
+			$(this).removeClass("on").parent().next().stop().slideUp()
+			$(this).find("img").css({"transform":"rotate(0deg)"});
+		}else {
+			$(this).addClass("on").parent().next().stop().slideDown()
+			$(this).find("img").css({"transform":"rotate(180deg)"});
+		}
+	});
+
+		$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_btn li.on").next().css("background-image","none");
+
+		$(".left_wrap .left_cnt .left_cnt7 .tab_cnt .sub_tab_btn li button").on("click", function  () {
+			var tgIdx=$(this).parent().index();
+
+			$(this).parent().addClass("on").siblings().removeClass("on");
+			$(this).closest(".tab_cnt").find(">.sub_tab_cnt>div").eq(tgIdx).show().addClass("on").siblings().removeClass("on").hide();
+			
+			return false;
+		});
+
+		$arrowBtn.on("click", function  () {
+			if ($(this).hasClass("on")) {
+				$leftCnt.stop().animate({"left":"-538px"})
+				$(this).removeClass("on").find("img").css("transform","scaleX(1)")
+			}else {
+				$leftCnt.stop().animate({"left":"64px"})
+				$(this).addClass("on").find("img").css("transform","scaleX(-1)")
+			}
+		});
+
+		$(".left_wrap .left_nav ul li button").on("click", function  () {
+			var tgIdx2=$(this).parent().index();
+      		console.log(tgIdx2);
+
+			$(this).parent().addClass("on").siblings().removeClass("on");
+			$(this).closest(".left_wrap").find(">.left_cnt>.left_cnt_wrap>.lc").eq(tgIdx2).show().siblings().hide();
+
+			if ($arrowBtn.hasClass("on") == false) {
+				$arrowBtn.addClass("on").find("img").css("transform","scaleX(-1)")
+				$leftCnt.stop().animate({"left":"64px"})
+			}else {
+				$arrowBtn.removeClass("on")
+			}
+			return false;
+		});
+
+		$(".top_menu .main_menu ul li a").on("mouseenter", function  () {
+			var tgIdx3=$(this).parent().index();
+			console.log(tgIdx3);
+			
+			$(this).parent().addClass("on").siblings().removeClass("on")
+			$(this).closest(".top_menu").find(".sub_menu > div").eq(tgIdx3).show().siblings().hide()
+		});
+
+		$(".top_menu .sub_menu .depth1 .close_btn").on("click", function  () {
+			$(".top_menu .main_menu ul li").removeClass("on")
+			$(this).parent().hide();
+		});
+
+		$(".fullscreen").on("mouseenter", function  () {
+			$(".top_menu .main_menu ul li").removeClass("on")
+			$(".top_menu .sub_menu > div").hide()
+		});
+	}
+	c1();
+});
+    </script>
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <!-- <script src="/resources/assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script> -->
+  <!-- <script src="/resources/assets/js/soft-design-system.min.js?v=1.0.5"></script> -->
+  <!-- ~~~~~~~~~~CUSTOM JS~~~~~~~~~~~-->
+
+  <!--OpenLayers 6.5 -->
+  <script src="/resources/js/proj4-src.js"></script>
+  <script src="/resources/js/ol.js"></script>
+  <!-- ol-ext -->
+  <!-- <link rel="stylesheet" href="/resources/css/ol-ext.min.css" /> -->
+  <script src="/resources/js/ol-ext.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>  
+
+  <!--Font-->
+  <script src="/resources/js/extra/FontAwesomeDef.js"></script>
+  <script src="/resources/js/extra/FontMaki2Def.js"></script>
+  <script src="/resources/js/extra/FontMakiDef.js"></script>
+  <!--utility-->
+  <script src="/resources/js/jspdf.umd.min.js"></script>
+  <script src="/resources/js/pdfobject.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="/resources/js/bootstrap.js"></script>
+  <!-- Grid Map JS-->
+  <script src="/resources/js/sjmap/sjmap.js"></script>
+  <script src="/resources/js/layer.js"></script>
+  </body>
+</html>

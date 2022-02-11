@@ -1,0 +1,42 @@
+.neon_Seongjang {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.neon_Seongjang i {
+  font: normal 30px/ 30px 'Nixie One', Helvetica, Arial;
+	color: rgba(0, 155, 119, 0.2);
+	text-shadow: 0 0 30px #EC637B, 
+		/* 0 0 10px rgba(230, 161, 173, 0.41),  */
+        0 0 10px rgba(0, 155, 119, 0.41), 
+		0 0 100px #E6A1AD, 
+		0 0 500px #F36780, 
+		5px 9px 5px rgba(0, 0, 0, 0.5);
+}
+
+.neon_Seongjang i.off {
+	color: rgba(0, 155, 119, 1);
+	text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+
+#navigationBar {
+	background:none;
+	height:auto;
+	text-align:right;
+	width:100%;
+  }
+  #navigationBar > ul > li {
+	display:inline;
+  }
+  #navigationBar > ul > li > a
+  {
+	color:#009B77;
+	padding:0px 15px;
+	text-decoration:none;
+	transition: color 0.3s ease-in;
+  }
+  #navigationBar > ul > li > a:hover {
+	box-shadow: 0 5px 50px 0  #15f4ee inset, 0 5px 50px 0 #15f4ee;
+	border-radius: 10px;
+  }

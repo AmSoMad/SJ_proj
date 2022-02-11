@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+		 <typeAliases>
+		 	<typeAlias alias="vLayer" type="com.seongjang.factory.location.dto.LocVworldLayer"/>
+		 	<typeAlias alias="HomeForm" type="com.seongjang.factory.location.domain.HomeForm"/>
+		 	<typeAlias alias="fac_list" type="com.seongjang.factory.location.dto.Fac_List"/>
+		 	<typeAlias alias="ksicCode" type="com.seongjang.factory.location.dto.KsicCode"/>
+		 	<typeAlias alias="General_Factory_Info" type="com.seongjang.factory.location.domain.General_Factory_Info"/>
+		 	<typeAlias alias="General_Title_Factory_Info" type="com.seongjang.factory.location.domain.General_Title_Factory_Info"/>
+		 	<typeAlias alias="Danji_Info" type="com.seongjang.factory.location.domain.Danji_Info"/>
+		 	<typeAlias alias="Danji_Limit" type="com.seongjang.factory.location.dto.Danji_Limit"/>
+		 	<typeAlias alias="Dist_Location" type="com.seongjang.factory.location.domain.Dist_location"/>
+		 	<typeAlias alias="Dist_Info" type="com.seongjang.factory.location.dto.Dist_Info"/>
+		 	<typeAlias alias="Swgtr_Fclty" type="com.seongjang.factory.location.dto.Swgtr_Faclty"/>
+		 	<typeAlias alias="col_dto" type="com.seongjang.factory.location.dto.col_dto"/>
+		 	<typeAlias alias="Waste_Fclty" type="com.seongjang.factory.location.dto.Waste_Faclty"/>
+		 	<typeAlias alias="Supply_Companies" type="com.seongjang.factory.location.dto.Supply_Companies"/>
+		 	<typeAlias alias="fac_info" type="com.seongjang.factory.location.dto.fac_info"/>
+		 	
+		 </typeAliases>
+
+
+
+
+</configuration>
+

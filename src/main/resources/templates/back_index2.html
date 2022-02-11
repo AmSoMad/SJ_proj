@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Drop Down Sidebar Menu | CodingLab </title>
+		  	  <!-- CSS Files -->
+	  <!-- <link id="pagestyle" href="/resources/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+	  <link id="pagestyle" href="/resources/assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" /> -->
+	<link href="/resources/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/js/l_map/l_map.css">
+	  <!-- Nucleo Icons -->
+	  <link href="/resources/assets/css/nucleo-icons.css" rel="stylesheet" />
+	  <link href="/resources/assets/css/nucleo-svg.css" rel="stylesheet" />
+	  <!-- Font Awesome Icons -->
+	  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+	  <link href="/resources/assets/css/nucleo-svg.css" rel="stylesheet" />
+	  <!-- CSS Files -->
+	  <!-- <link id="pagestyle" href="/resources/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" /> -->
+	  <!-- <link id="pagestyle" href="/resources/assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" /> -->
+	    <script src="/resources/js/jquery.min.js"></script>
+		
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <!-- ol-ext -->
+	  <link rel="stylesheet" href="/resources/css/ol-ext.min.css" />
+    
+	  <!-- CUSTOM CSS Files -->
+    <link href="/resources/css/home.css" rel="stylesheet" />
+	  <link rel="stylesheet" href="/resources/css/ol.css" type="text/css">
+
+	  
+	  <link href="/resources/js/sjmap/sjmap.css" rel="stylesheet" />
+	  
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <!-- <nav>
+		<div class="navbar">
+		  <i class='bx bx-menu'></i>
+		  <div class="logo"><a href="#">성장</a></div>
+		  <div class="nav-links">
+			<div class="sidebar-logo">
+			  <span class="logo-name">CodingLab</span>
+			  <i class='bx bx-x' ></i>
+			</div>
+			<ul class="links">
+			  <li><a href="#">HOME</a></li>
+			  <li>
+				<a href="#">HTML & CSS_1</a>
+				<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+				<div >
+					<ul class="htmlCss-sub-menu sub-menu" style="height: 500px;width: 500px;">
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Login Forms</a></li>
+					<li><a href="#">Card Design</a></li>
+					<li class="more">
+						<span><a href="#">More</a>
+						<i class='bx bxs-chevron-right arrow more-arrow'></i>
+					</span>
+						<ul class="more-sub-menu sub-menu">
+						<li><a href="#">Neumorphism</a></li>
+						<li><a href="#">Pre-loader</a></li>
+						<li><a href="#">Glassmorphism</a></li>
+						</ul>
+					</li>
+					</ul>
+					<ul class="htmlCss-sub-menu sub-menu">
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">Login Forms</a></li>
+						<li><a href="#">Card Design</a></li>
+						<li class="more">
+						<span><a href="#">More</a>
+						<i class='bx bxs-chevron-right arrow more-arrow'></i>
+						</span>
+						<ul class="more-sub-menu sub-menu">
+							<li><a href="#">Neumorphism</a></li>
+							<li><a href="#">Pre-loader</a></li>
+							<li><a href="#">Glassmorphism</a></li>
+						</ul>
+						</li>
+					</ul>
+					<ul class="htmlCss-sub-menu sub-menu">
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">Login Forms</a></li>
+						<li><a href="#">Card Design</a></li>
+						<li class="more">
+						<span><a href="#">More</a>
+						<i class='bx bxs-chevron-right arrow more-arrow'></i>
+						</span>
+						<ul class="more-sub-menu sub-menu">
+							<li><a href="#">Neumorphism</a></li>
+							<li><a href="#">Pre-loader</a></li>
+							<li><a href="#">Glassmorphism</a></li>
+						</ul>
+						</li>
+					</ul>
+				</div>				  				
+			  </li>
+			  <li>
+				<a href="#">HTML & CSS_2</a>
+				<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+				<ul class="htmlCss-sub-menu sub-menu">
+				  <li><a href="#">Web Design</a></li>
+				  <li><a href="#">Login Forms</a></li>
+				  <li><a href="#">Card Design</a></li>
+				  <li class="more">
+					<span><a href="#">More</a>
+					<i class='bx bxs-chevron-right arrow more-arrow'></i>
+				  </span>
+					<ul class="more-sub-menu sub-menu">
+					  <li><a href="#">Neumorphism</a></li>
+					  <li><a href="#">Pre-loader</a></li>
+					  <li><a href="#">Glassmorphism</a></li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>
+			  <li>
+				<a href="#">HTML & CSS_3</a>
+				<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+				<ul class="htmlCss-sub-menu sub-menu">
+				  <li><a href="#">Web Design</a></li>
+				  <li><a href="#">Login Forms</a></li>
+				  <li><a href="#">Card Design</a></li>
+				  <li class="more">
+					<span><a href="#">More</a>
+					<i class='bx bxs-chevron-right arrow more-arrow'></i>
+				  </span>
+					<ul class="more-sub-menu sub-menu">
+					  <li><a href="#">Neumorphism</a></li>
+					  <li><a href="#">Pre-loader</a></li>
+					  <li><a href="#">Glassmorphism</a></li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>
+			  <li>
+				<a href="#">HTML & CSS</a>
+				<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+				<ul class="htmlCss-sub-menu sub-menu">
+				  <li><a href="#">Web Design</a></li>
+				  <li><a href="#">Login Forms</a></li>
+				  <li><a href="#">Card Design</a></li>
+				  <li class="more">
+					<span><a href="#">More</a>
+					<i class='bx bxs-chevron-right arrow more-arrow'></i>
+				  </span>
+					<ul class="more-sub-menu sub-menu">
+					  <li><a href="#">Neumorphism</a></li>
+					  <li><a href="#">Pre-loader</a></li>
+					  <li><a href="#">Glassmorphism</a></li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>			  
+			  <li>
+				<a href="#">JAVASCRIPT</a>
+				<i class='bx bxs-chevron-down js-arrow arrow '></i>
+				<ul class="js-sub-menu sub-menu">
+				  <li><a href="#">Dynamic Clock</a></li>
+				  <li><a href="#">Form Validation</a></li>
+				  <li><a href="#">Card Slider</a></li>
+				  <li><a href="#">Complete Website</a></li>
+				</ul>
+			  </li>
+			  <li><a href="#">ABOUT US</a></li>
+			  <li><a href="#">CONTACT US</a></li>
+			</ul>
+		  </div>
+		  <div class="search-box">
+			<i class='bx bx-search'></i>
+			<div class="input-box">
+			  <input type="text" placeholder="Search...">
+			</div>
+		  </div>
+		</div>
+	</nav>	  -->
+   </head>
+<body>
+
+	<div class="sidebar close">
+		<div class="logo-details">
+			<i class='bx bxs-factory bx-tada' ></i>
+			<span class="logo_name">성공하는공장</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<a href="#">
+					<i class='bx bx-grid-alt bx-tada'></i>
+					<span class="link_name">Dashboard</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Category</a>
+            <div id="left-tab-1"></div>
+          </li>
+				</ul>
+			</li>
+			<li>
+				<div class="iocn-link">
+					<a href="#">
+						<i class='bx bx-collection'></i>
+						<span class="link_name">Category</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Category</a></li>
+					<li><a href="#">HTML & CSS</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">PHP & MySQL</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="iocn-link">
+					<a href="#">
+						<i class='bx bx-book-alt'></i>
+						<span class="link_name">Posts</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Posts</a></li>
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Login Form</a></li>
+					<li><a href="#">Card Design</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-pie-chart-alt-2'></i>
+					<span class="link_name">Analytics</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Analytics</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-line-chart'></i>
+					<span class="link_name">Chart</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Chart</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="iocn-link">
+					<a href="#">
+						<i class='bx bx-plug'></i>
+						<span class="link_name">Plugins</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Plugins</a></li>
+					<li><a href="#">UI Face</a></li>
+					<li><a href="#">Pigments</a></li>
+					<li><a href="#">Box Icons</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-compass'></i>
+					<span class="link_name">Explore</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Explore</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-history'></i>
+					<span class="link_name">History</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">History</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-cog'></i>
+					<span class="link_name">Setting</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Setting</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="profile-details">
+					<div class="profile-content">
+						<img src="image/profile.jpg" alt="profileImg">
+					</div>
+					<div class="name-job">
+						<div class="profile_name">Prem Shahi</div>
+						<div class="job">Web Desginer</div>
+					</div>
+					<i class='bx bx-log-out'></i>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<section class="home-section">
+		<div class="home-content">
+			<i class='bx bx-menu'></i>
+			<!-- <span class="text">Drop Down Sidebar</span> -->
+			<!-- asdasdasdasdasdasdasd -->
+			<nav class="home-content">
+				<div class="navbar">
+					<i class='bx bx-menu'></i>
+					<div class="logo"><a href="#">성장</a></div>
+					<div class="nav-links">
+						<div class="sidebar-logo">
+							<span class="logo-name">CodingLab</span>
+							<i class='bx bx-x'></i>
+						</div>
+						<ul class="links">
+              <!-- <li>
+                <div class="input-box search-container">
+                  <input type="text" name="search" placeholder="Search..." class="search-input">
+                  <a href="#" class="search-btn">
+                    <i class='bx bx-search'></i>
+                  </a>
+                </div>
+              </li> -->
+							<li><a href="#">HOME</a></li>
+							<li>
+								<a href="#" class="">업종별가능여부</a>
+								<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+									<ul class="htmlCss-sub-menu sub-menu" >
+										<li><a href="#">1번레이어</a></li>
+										<li><a href="#">2번레이어</a></li>
+										<li><a href="#">3번레이어</a></li>
+										<li class="more">
+											<span><a href="#">More</a>
+												<i class='bx bxs-chevron-right arrow more-arrow'></i>
+											</span>
+											<ul class="more-sub-menu sub-menu">
+												<li><a href="#">Neumorphism</a></li>
+												<li><a href="#">Pre-loader</a></li>
+												<li><a href="#">Glassmorphism</a></li>
+											</ul>
+										</li>
+									</ul>
+                  <ul class="htmlCss-sub-menu sub-menu" style="margin-top: 20%;" >
+										<li><a href="#">Web Design</a></li>
+										<li><a href="#">Logssssin Forms</a></li>
+										<li><a href="#">Card Design</a></li>
+										<li class="more">
+											<span><a href="#">More</a>
+												<i class='bx bxs-chevron-right arrow more-arrow'></i>
+											</span>
+											<ul class="more-sub-menu sub-menu">
+												<li><a href="#">Neumorphism</a></li>
+												<li><a href="#">Pre-loader</a></li>
+												<li><a href="#">Glassmorphism</a></li>
+											</ul>
+										</li>
+									</ul>
+							</li>
+							<li>
+								<a href="#">HTML & CSS_2</a>
+								<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+								<ul class="htmlCss-sub-menu sub-menu">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">Login Forms</a></li>
+									<li><a href="#">Card Design</a></li>
+									<li class="more">
+										<span><a href="#">More</a>
+											<i class='bx bxs-chevron-right arrow more-arrow'></i>
+										</span>
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Neumorphism</a></li>
+											<li><a href="#">Pre-loader</a></li>
+											<li><a href="#">Glassmorphism</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">HTML & CSS_3</a>
+								<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+								<ul class="htmlCss-sub-menu sub-menu">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">Login Forms</a></li>
+									<li><a href="#">Card Design</a></li>
+									<li class="more">
+										<span><a href="#">More</a>
+											<i class='bx bxs-chevron-right arrow more-arrow'></i>
+										</span>
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Neumorphism</a></li>
+											<li><a href="#">Pre-loader</a></li>
+											<li><a href="#">Glassmorphism</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">HTML & CSS</a>
+								<i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+								<ul class="htmlCss-sub-menu sub-menu">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">Login Forms</a></li>
+									<li><a href="#">Card Design</a></li>
+									<li class="more">
+										<span><a href="#">More</a>
+											<i class='bx bxs-chevron-right arrow more-arrow'></i>
+										</span>
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Neumorphism</a></li>
+											<li><a href="#">Pre-loader</a></li>
+											<li><a href="#">Glassmorphism</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">JAVASCRIPT</a>
+								<i class='bx bxs-chevron-down js-arrow arrow '></i>
+								<ul class="js-sub-menu sub-menu">
+									<li><a href="#">Dynamic Clock</a></li>
+									<li><a href="#">Form Validation</a></li>
+									<li><a href="#">Card Slider</a></li>
+									<li><a href="#">Complete Website</a></li>
+								</ul>
+							</li>
+							<li><a href="#">ABOUT US</a></li>
+							<li><a href="#">CONTACT US</a></li>
+						</ul>
+					</div>
+					<div class="search-box">
+						<i class='bx bx-search'></i>
+						<div class="input-box">
+							<input type="text" placeholder="Search...">
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- asdasdasdasdsa -->
+
+		</div>
+		<div class="fullscreen" id="fullscreen">
+			<div class="map" id="map">
+
+			</div>
+			<div id="popup_nm" class=""></div>
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+			<!-- Content of the menu -->
+			<div id="menu">
+			
+				<div class="">
+					<table class="table-responsive">
+						<thead></thead>
+						<tbody>
+							<tr>
+								<td>
+									<!--v월드 레이어 리스트-->
+									<div class="container-fluid">
+										<div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+											<input type="text" class="form-control border-1 ps-1" placeholder="지역명 ex) 화성시"
+												name="div_code" aria-haspopup="true" aria-expanded="false" maxlength="5"
+												autocomplete="off">
+											<input type="text" class="form-control border-1 ps-1" placeholder="사업자등록번호"
+												name="ind_code" aria-haspopup="true" aria-expanded="false" maxlength="5"
+												autocomplete="off">
+											<!-- <button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn" onclick="pointMarker_($('input[name=ind_code]').val())">Search</button> -->
+											<button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+												onclick="($('input[name=ind_code]').val())">Search</button>
+										</div>
+										<div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+											<input type="text" class="form-control border-1 ps-1" placeholder="지역명 ex) 화성시"
+												name="ksic_div_code" aria-haspopup="true" aria-expanded="false" maxlength="5"
+												autocomplete="off">
+											<input type="text" class="form-control border-1 ps-1" placeholder="업종명·코드"
+												name="ksic_ind_code" aria-haspopup="true" aria-expanded="false" maxlength="5"
+												autocomplete="off" value="10129">
+											<button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+												onclick="pointMarker_($('input[name=ksic_ind_code]').val())">Search</button>
+											<div class='dropdown-menu' id="dropList" style="z-index: 1001;"></div>
+										</div>
+										<div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+											<input type="text" class="form-control border-1 ps-1" placeholder="지역명 ex) 화성시"
+												name="danji_div_code" aria-haspopup="true" aria-expanded="false" maxlength="5"
+												autocomplete="off" value="경기">
+											<input type="text" class="form-control border-1 ps-1" placeholder="산업단지 검색"
+												name="danji_ind_code" aria-haspopup="true" aria-expanded="false" maxlength="5"
+												autocomplete="off">
+											<button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+												onclick="srch_danji($('input[name=danji_div_code]').val(),$('input[name=danji_ind_code]').val())">Search</button>
+										</div>
+										<div class="border-radius-lg d-flex me-2 opacity-6 text-dark me-1">
+											<input type="text" class="form-control border-1 ps-1" placeholder="주소 검색"
+												id="srch_address" name="srch_address" aria-haspopup="true" aria-expanded="false"
+												autocomplete="off" value="서초대로 49길 11">
+											<button class="btn btn-seungjang btn-sm mb-0 me-1" name="SearchBtn"
+												onclick="srch_addr($('input[name=srch_address]').val())">Search</button>
+			
+										</div>
+										<button type="button" class="btn btn-seungjang control_btn swipeBtn"
+											onclick="modeSW(this)"><span class='tool_name'>SWIPE</span></button>
+										<div id="readExcel_div1" class="btn btn-seungjang">
+											<span onclick="document.getElementById('file_1').click();">지번주소</span>
+											<input type="file" id="file_1" style="width: 70px; display: none;" onchange="readExcel('parcel')">
+										</div>
+										<div id="readExcel_div2" class="btn btn-seungjang">
+											<span onclick="document.getElementById('file_2').click();">도로명주소</span>
+											<input type="file" id="file_2" style="width: 70px; display: none;" onchange="readExcel('road')">
+										</div>
+										<div id="info" class="btn btn-seungjang"><i class="fas fa-search-location"></i>줌상태 0</div>
+										<div id="srch_ind_code_result" class="btn btn-seungjang"><i class="fas fa-industry"></i>
+										</div>
+										<div id="mouseCoordinate_Center" class="btn btn-seungjang" style="display: block;">중심좌표
+										</div>
+										<div id="mouseCoordinate" class="btn btn-seungjang" style="display: block;">좌표</div>
+										<div id='vLayerList' class=""></div>
+										<p>범례</p>
+										<div id="nhn_image" class="" style="OVERFLOW-Y:auto;width:100%; height: 228px;">
+											<img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral1.png"></img>
+											<img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral2.png"></img>
+											<img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral4.png"></img>
+											<img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral5.png"></img>
+											<img src="https://map.naver.com/v5/assets/img/home/legend-popup_cadastral3.png"></img>
+											<div id="wms_image" class=""></div>
+										</div>
+			
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="data"></div>
+								</td>
+							</tr>
+							<!-- <tr>
+									<td>
+									<div id="info2" class="">
+									  <div class="">
+										<div><span class=" filter" style="background-color: rgba(255, 0, 128, 0.8);" id="addFeature00">　</span><input type="text" class="" id="addFeatureName00" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(0, 236, 45, 0.8);" id="addFeature01">　</span><input type="text" class="" id="addFeatureName01" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(253, 203, 186, 0.8);" id="addFeature02">　</span><input type="text" class="" id="addFeatureName02" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(58, 65, 111, 0.8);" id="addFeature03">　</span><input type="text" class="" id="addFeatureName03" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(251, 207, 51, 0.8);" id="addFeature04">　</span><input type="text" class="" id="addFeatureName04" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(74, 23, 123, 0.8);" id="addFeature05">　</span><input type="text" class="" id="addFeatureName05" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(254, 228, 218, 0.8);" id="addFeature06">　</span><input type="text" class="" id="addFeatureName06" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(33, 212, 203, 0.8);" id="addFeature07">　</span><input type="text" class="" id="addFeatureName07" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(171, 37, 76, 0.8);" id="addFeature08">　</span><input type="text" class="" id="addFeatureName08" style="width: 200px;" disabled><br></div>
+										<div><span class=" filter" style="background-color: rgba(31, 141, 106, 0.8);"     id="addFeature09">　</span><input type="text" class="" id="addFeatureName09" style="width: 200px;" disabled><br></div>
+									  </div>
+									</div>   
+									</td>
+								  </tr> -->
+						</tbody>
+					</table>
+					<div class="col">
+			
+					</div>
+					<div class="col">
+			
+					</div>
+					<div class="col">
+			
+					</div>
+				</div>
+			</div>
+			<div id="menu2">
+				<h1>Menu2</h1>
+				<p style="border-bottom:1px solid #999;">
+					<i>분양정보</i>
+				<div id="dist_info"></div>
+				</p>
+			</div>
+			<div id="menu3">
+				<h1>Menu3</h1>
+				<p style="border-bottom:1px solid #999;">
+					<i>산업단지</i>
+				</p>
+				<!-- <div class="container-fluid"></div> -->
+				<div class="container-fluid">
+					<div class="navbar-brand" style="font-size: 13px;">
+						<div class="nav-wrapper position-relative end-0">
+							<nav style="height: 30px;" >
+								<ul class="nav nav-pills nav-fill p-1" role="tablist">
+			
+									<li class="nav-item">
+										<a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#tab-1" role="tab"
+											aria-controls="preview" aria-selected="true" data-tab="tab-1">
+                      업종별가능여부
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-2" role="tab"
+											aria-controls="code" aria-selected="false" data-tab="tab-2">
+											관리기본계획
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-3" role="tab"
+											aria-controls="code" aria-selected="false" data-tab="tab-3">
+											산업단지소식(개발중)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#tab-4" role="tab"
+											aria-controls="code" aria-selected="false" data-tab="tab-4">
+											지자체혜택(개발중)
+										</a>
+									</li>
+			
+								</ul>
+							</nav>
+						</div>
+					</div>
+			
+					<div id="tab-1" class="tab-content height_100 current ">
+						<!--탭1-->
+						<div id="danji_info"></div>
+					</div>
+					<div id="tab-2" class="tab-content height_100">
+						<!--탭2-->
+						<div id="myPdf" style="height: 758px;"></div>
+					</div>
+					<div id="tab-3" class="tab-content height_100">
+						<!--탭3-->
+			
+					</div>
+					<div id="tab-4" class="tab-content height_100">
+						<!--탭4-->
+			
+					</div>
+			
+				</div> <!-- 끝 -->
+				<!-- <div id="danji_info"></div>
+								  <div id="myPdf"></div> -->
+			</div>
+			<div id="menu4">
+				<h1>Menu4</h1>
+				<p style="border-bottom:1px solid #999;">
+					<i>기반시설</i>
+				</p>
+				<div class="d-flex float-start" style="/*height: 872px;*/">
+					<ul class="nav nav-pills nav-fill flex-column" role="tablist" style="/*writing-mode: tb-rl;*/">
+						<li class="nav-item" role="presentation"><a
+								class="nav-link active border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-1" style="writing-mode: tb-rl;">세로텝1번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-2" style="writing-mode: tb-rl;">세로탭2번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-3" style="writing-mode: tb-rl;">세로탭3번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-13" style="writing-mode: tb-rl;">세로탭4번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-14" style="writing-mode: tb-rl;">세로탭5번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-15" style="writing-mode: tb-rl;">세로텝 6번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-16" style="writing-mode: tb-rl;">세로탭7번</a></li>
+						<li class="nav-item" role="presentation"><a
+								class="nav-link border rounded border-primary shadow-sm btn-outline-dark" role="tab"
+								data-bs-toggle="pill" href="#tab-19" style="writing-mode: tb-rl;">세로탭8번</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane fade show active" role="tabpanel" id="tab-1">
+							<div>
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-4">Tab 4</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
+											data-bs-toggle="tab" href="#tab-5">Tab 5</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-6">Tab 6</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-17">Tab</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-18">Tab</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane" role="tabpanel" id="tab-4">
+										<div class="simple-slider" style="width: 360px;">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"
+														style="background: url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center center / cover no-repeat;width: 360px;">
+													</div>
+													<div class="swiper-slide"
+														style="background: url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center center / cover no-repeat;">
+													</div>
+													<div class="swiper-slide"
+														style="background: url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center center / cover no-repeat;">
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div style="margin: 10px;"><canvas height="0"
+												style="display: block; width: 0px; height: 0px;" width="0"></canvas></div>
+									</div>
+									<div class="tab-pane active" role="tabpanel" id="tab-5" style="/*width: 356px;*/"></div>
+									<div class="tab-pane" role="tabpanel" id="tab-6">
+										<p>Content for tab 6.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-17">
+										<p>Tab content.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-18">
+										<p>Tab content.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-2">
+							<div>
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
+											data-bs-toggle="tab" href="#tab-7">Tab 7</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-8">Tab 8</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-9">Tab 9</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-24">Tab</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-25">Tab</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" role="tabpanel" id="tab-7">
+										<p>Content for tab 7.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-8">
+										<p>Content for tab 8.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-9">
+										<p>Content for tab 9.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-24">
+										<p>Tab content.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-25">
+										<p>Tab content.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-3">
+							<div>
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
+											data-bs-toggle="tab" href="#tab-10">Tab 10</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-11">Tab 11</a></li>
+									<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+											href="#tab-12">Tab 12</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" role="tabpanel" id="tab-10">
+										<p>Content for tab 10.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-11">
+										<p>Content for tab 11.</p>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="tab-12">
+										<p>Content for tab 12.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-13">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-14">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-15">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-16">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-19">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-20">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-21">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-22">
+							<p>Tab content.</p>
+						</div>
+						<div class="tab-pane fade" role="tabpanel" id="tab-23">
+							<p>Tab content.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="menu5">
+				<h1>Menu5</h1>
+				<p style="border-bottom:1px solid #999;">
+					<i>제조현황</i>
+				</p>
+			</div>
+			<div id="menu6">
+				<h1>Menu6</h1>
+				<p style="border-bottom:1px solid #999;">
+					<i>미정입니다.</i>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<div style="display: none;">
+		<label>
+			<input type="checkbox" style="display: none;" id="rotateWithView">
+		</label>
+		<form id="wfsForm">
+			<input type="hidden" name="key" value="52AED5A5-5D49-35C0-97A4-AC567AA055F7">
+			<!-- <input type="hidden" name="domain" value="http://seongjang.com">-->
+			<input type="hidden" name="SERVICE" value="WFS">
+			<input type="hidden" name="version" value="1.1.0">
+			<input type="hidden" name="request" value="GetFeature">
+			<input type="hidden" name="TYPENAME" value="">
+			<input type="hidden" name="OUTPUT" value="text/javascript">
+			<input type="hidden" name="SRSNAME" value="EPSG:3857">
+			<input type="hidden" name="BBOX" value="">
+		</form>
+		<input type="hidden" name="SGIS_AccessToken" value="">
+		<input type="hidden" name="road_address" value="">
+		<input type="hidden" name="bunji_address" value="">
+	</div>
+  <script>
+	    $(document)
+    .on('click.bs.dropdown.data-api', '.dropdown', function (e) { e.stopPropagation() })
+
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+//   console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+
+  ///////////////
+    // search-box open close js code
+let navbar = document.querySelector(".navbar");
+let searchBox = document.querySelector(".search-box .bx-search");
+// let searchBoxCancel = document.querySelector(".search-box .bx-x");
+
+searchBox.addEventListener("click", ()=>{
+  navbar.classList.toggle("showInput");
+  if(navbar.classList.contains("showInput")){
+    searchBox.classList.replace("bx-search" ,"bx-x");
+  }else {
+    searchBox.classList.replace("bx-x" ,"bx-search");
+  }
+});
+
+// sidebar open close js code
+let navLinks = document.querySelector(".nav-links");
+let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+menuOpenBtn.onclick = function() {
+navLinks.style.left = "0";
+}
+menuCloseBtn.onclick = function() {
+navLinks.style.left = "-100%";
+}
+
+
+// sidebar submenu open close js code
+let htmlcssArrow = document.querySelector(".htmlcss-arrow");
+htmlcssArrow.onclick = function() {
+ navLinks.classList.toggle("show1");
+}
+let moreArrow = document.querySelector(".more-arrow");
+moreArrow.onclick = function() {
+ navLinks.classList.toggle("show2");
+}
+let jsArrow = document.querySelector(".js-arrow");
+jsArrow.onclick = function() {
+ navLinks.classList.toggle("show3");
+}
+  </script>
+  <!-- <script src="/resources/js/l_map/l_map.js"></script> -->
+    <!-- Github buttons -->
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+	<!-- <script src="/resources/assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script> -->
+	<!-- <script src="/resources/assets/js/soft-design-system.min.js?v=1.0.5"></script> -->
+	<!-- ~~~~~~~~~~CUSTOM JS~~~~~~~~~~~-->
+  
+	<!--OpenLayers 6.5 -->
+	<script src="/resources/js/proj4-src.js"></script>
+	<script src="/resources/js/ol.js"></script>
+	<!-- ol-ext -->
+	<!-- <link rel="stylesheet" href="/resources/css/ol-ext.min.css" /> -->
+	<script src="/resources/js/ol-ext.js"></script>  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>  
+  
+	<!--Font-->
+	<script src="/resources/js/extra/FontAwesomeDef.js"></script>
+	<script src="/resources/js/extra/FontMaki2Def.js"></script>
+	<script src="/resources/js/extra/FontMakiDef.js"></script>
+	<!--utility-->
+	<script src="/resources/js/jspdf.umd.min.js"></script>
+	<script src="/resources/js/pdfobject.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="/resources/js/bootstrap.js"></script>
+	  <!-- Grid Map JS-->
+	  <script src="/resources/js/sjmap/sjmap.js"></script>
+	  <script src="/resources/js/layer.js"></script>
+</body>
+</html>
